@@ -1,1 +1,101 @@
-<p>shopping-cart-details works!</p>
+<div class="ecommerce-cart-wrapper cart" *ngIf="showCart">
+  <div
+    style="opacity: 1; transition: opacity 300ms"
+    class="ecommerce-cart-container-wrapper ecommerce-cart-container-wrapper-cart-type-right-side cart-wrapper"
+  >
+    <div class="ecommerce-cart-container cart-container">
+      <div class="ecommerce-cart-header cart-header">
+        <h4 class="ecommerce-cart-heading">My Cart</h4>
+        <div
+          style="cursor: pointer"
+          class="ecommerce-cart-close-link cart-close-button"
+          (click)="cartDisplayStatus(false)"
+        >
+          <div>Close</div>
+          <i
+            class="ph ph-x-bold"
+            style="text-align: center; font-size: 0.84em"
+          ></i>
+        </div>
+      </div>
+      <div class="ecommerce-cart-form-wrapper cart-form-wrapper">
+        <form class="ecommerce-cart-form cart-default-state">
+          <div id="target" class="ecommerce-cart-list cart-list">
+            <div class="ecommerce-cart-item cart-item">
+              <div class="cart-image-wrapper">
+                <img
+                  src="assets/images/site/kendal-unsplash.jpg"
+                  class="ecommerce-cart-item-image cart-product-image"
+                />
+              </div>
+              <div class="ecommerce-cart-item-info">
+                <div>
+                  <h5 class="cart-item-header">Gray Whale Thank You</h5>
+                  <p class="cart-item-details">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <div class="cart-quantity-wrapper">
+                    <select default-value="1" class="quantity-select">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                    <a href="#" class="inline-link margin-left-0-5"
+                      ><div>Remove</div></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="product-price">$&nbsp;4.00&nbsp;</div>
+            </div>
+            <div class="ecommerce-cart-item cart-item">
+              <div class="cart-image-wrapper">
+                <img
+                  src="assets/images/site/pawel-czerwinski-unsplash_ADJ.jpg"
+                  class="ecommerce-cart-item-image cart-product-image"
+                />
+              </div>
+              <div class="ecommerce-cart-item-info">
+                <div>
+                  <h5 class="cart-item-header">New York, London, Paris</h5>
+                  <p class="cart-item-details">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <div class="cart-quantity-wrapper">
+                    <select default-value="1" class="quantity-select">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                    <a href="#" class="inline-link margin-left-0-5"
+                      ><div>Remove</div></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="product-price">$&nbsp;13.00&nbsp;</div>
+            </div>
+          </div>
+          <div class="ecommerce-cart-footer cart-footer">
+            <div class="ecommerce-cart-line-item cart-line-item">
+              <div class="feature-paragraph">Subtotal</div>
+              <div class="ecommerce-cart-order-value cart-price">
+                $&nbsp;17.00&nbsp;
+              </div>
+            </div>
+            <div class="margin-top-1">
+              <div class="button-wrapper">
+                <a href="/" class="button inline-block"
+                  ><div class="button-text">Continue to Checkout</div>
+                  <i class="ph ph-arrow-right-bold"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

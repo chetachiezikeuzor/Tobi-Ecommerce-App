@@ -1,1 +1,240 @@
-<p>checkout-section works!</p>
+<section class="section margin-top-9-5">
+  <div class="container no-padding-mobile">
+    <div class="inner-spacing">
+      <div class="product-description-wrapper">
+        <div class="product-description-images-wrapper">
+          <div class="ecommerce-checkout-layout-main checkout-column-left">
+            <form class="ecommerce-checkout-customer-info-wrapper">
+              <div class="ecommerce-checkout-block-header block-header">
+                <h4>Customer Information</h4>
+              </div>
+              <fieldset class="ecommerce-checkout-block-content block-content">
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Email *</label
+                ><input
+                  type="text"
+                  name="email"
+                  class="ecommerce-checkout-email-input checkout-input"
+                  value=""
+                />
+              </fieldset>
+            </form>
+            <form class="ecommerce-checkout-shipping-address-wrapper">
+              <div class="ecommerce-checkout-block-header block-header">
+                <h4>Shipping Address</h4>
+              </div>
+              <fieldset class="ecommerce-checkout-block-content block-content">
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Full Name *</label
+                ><input
+                  type="text"
+                  name="name"
+                  class="ecommerce-checkout-shipping-full-name checkout-input"
+                  value=""
+                /><label class="ecommerce-checkout-label checkout-label"
+                  >Street Address *</label
+                ><input
+                  type="text"
+                  name="address_line1"
+                  class="ecommerce-checkout-shipping-street-address checkout-input"
+                  value=""
+                /><label class="ecommerce-checkout-label checkout-label"
+                  >Street Address 2 (optional)</label
+                ><input
+                  type="text"
+                  name="address_line2"
+                  class="ecommerce-checkout-shipping-street-address-optional checkout-input"
+                  value=""
+                />
+                <div class="ecommerce-checkout-row">
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >City *</label
+                    ><input
+                      type="text"
+                      name="address_city"
+                      class="ecommerce-checkout-shipping-city checkout-input"
+                      value=""
+                    />
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >State/Province</label
+                    ><input
+                      type="text"
+                      name="address_state"
+                      class="ecommerce-checkout-shipping-state-province checkout-input"
+                      value=""
+                    />
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >Zip/Postal Code *</label
+                    ><input
+                      type="text"
+                      name="address_zip"
+                      class="ecommerce-checkout-shipping-zip-postal-code checkout-input"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Country *</label
+                ><select
+                  name="address_country"
+                  class="ecommerce-checkout-shipping-country-selector checkout-input"
+                  value="US"
+                >
+                  <option value="CA">Canada</option>
+                  <option selected="" value="US">United States</option>
+                </select>
+              </fieldset>
+            </form>
+            <div class="ecommerce-checkout-payment-info-wrapper">
+              <div class="ecommerce-checkout-block-header block-header">
+                <h4>Payment Info</h4>
+                <img
+                  src="assets/images/site/payment_methods.svg"
+                  loading="lazy"
+                  class="payment-method"
+                />
+                <p>
+                  All payments are processed securely. If you are experiencing
+                  any issues, please call us at 201-292-4506.
+                </p>
+              </div>
+              <fieldset class="ecommerce-checkout-block-content block-content">
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Card Number *</label
+                ><input
+                  type="text"
+                  name="card_number"
+                  class="ecommerce-checkout-shipping-street-address-optional checkout-input"
+                  value=""
+                />
+                <div class="ecommerce-checkout-row">
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >Expiration Date *</label
+                    ><input
+                      type="text"
+                      name="card_expiration_date"
+                      class="ecommerce-checkout-shipping-street-address-optional checkout-input"
+                      value=""
+                    />
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >Security Code *</label
+                    ><input
+                      type="text"
+                      name="card_security_code"
+                      class="ecommerce-checkout-shipping-street-address-optional checkout-input"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div class="billing-address-toggle">
+                  <input
+                    type="checkbox"
+                    checked=""
+                    id="billing-address-toggle"
+                    class=""
+                  /><label
+                    for="billing-address-toggle"
+                    class="small-text no-margin-bottom"
+                    >Billing address same as shipping</label
+                  >
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div class="product-description-content-wrapper">
+          <div
+            class="ecommerce-layout-sidebar checkout-column-right no-padding-lr"
+          >
+            <div class="checkout-info-wrapper">
+              <div
+                class="ecommerce-checkout-order-itemswrapper padding-lr-1 no-margin-bottom desktop-only"
+              >
+                <div class="block-header">
+                  <h4 class="no-margin-bottom">Order Summary</h4>
+                </div>
+                <fieldset
+                  class="ecommerce-checkout-block-content block-content"
+                >
+                  <div
+                    class="ecommerce-checkout-order-items-list order-item-list"
+                  >
+                    <div class="ecommerce-checkout-order-item order-item">
+                      <div class="checkout-image-wrapper">
+                        <img
+                          src="assets/images/site/ceyda-ciftci-unsplash.jpg"
+                          class="ecommerce-cart-item-image order-product-image"
+                        />
+                      </div>
+                      <div
+                        class="ecommerce-checkout-order-item-description-wrapper"
+                      >
+                        <div
+                          class="ecommerce-checkout-order-item-quantity-wrapper align-start"
+                        >
+                          <h5>Gray Whale Thank You</h5>
+                          <div
+                            class="product-cart-quantity"
+                            style="font-size: 0.8em"
+                          >
+                            <div class="small-text">X&nbsp;</div>
+                            <div class="small-text">1</div>
+                          </div>
+                        </div>
+                        <ul
+                          class="ecommerce-checkout-order-item-option-list cart-option-list"
+                        >
+                          <li class="cart-option">
+                            <span class="none">Quantity</span
+                            ><span>Single Card</span>
+                          </li>
+                          <li class="cart-option">
+                            <span class="none">Envelope Color</span
+                            ><span>White</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="product-price">$&nbsp;4.00&nbsp;</div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="padding-lr-1 order-summary">
+                <fieldset
+                  class="ecommerce-checkout-block-content block-content"
+                >
+                  <div class="ecommerce-checkout-summary-line-item line-item">
+                    <div class="small-text">Subtotal</div>
+                    <div class="product-price">$&nbsp;29.00&nbsp;</div>
+                  </div>
+
+                  <div class="divider-line full-width"></div>
+                  <div class="ecommerce-checkout-summary-line-item line-item">
+                    <div class="feature-paragraph">Total</div>
+                    <div class="cart-price">$&nbsp;29.00&nbsp;</div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="padding-lr-1">
+                <div class="button-wrapper">
+                  <a href="/" class="button outline inline-block"
+                    ><div class="button-text">Add to Cart</div>
+                    <i class="ph ph-arrow-right-bold"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
