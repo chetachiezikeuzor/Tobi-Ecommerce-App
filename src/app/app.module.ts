@@ -1,30 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { SharedModule } from './shared-module/shared.module';
 
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ProductService } from './services/product.service';
-import { AboutSectionComponent } from './components/about-section/about-section.component';
-import { CallToActionComponent } from './components/call-to-action/call-to-action.component';
-import { CategoriesGridComponent } from './components/categories-grid/categories-grid.component';
-import { CategoriesSectionComponent } from './components/categories-section/categories-section.component';
-import { CheckoutSectionComponent } from './components/checkout-section/checkout-section.component';
-import { FeaturedProductComponent } from './components/featured-product/featured-product.component';
-import { FooterSectionComponent } from './components/footer-section/footer-section.component';
-import { MainHeroComponent } from './components/main-hero/main-hero.component';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
+import { AppRoutingModule } from './app-routing.module';
 import { CategoriesPageComponent } from './pages/categories-page/categories-page.component';
-import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent, AboutSectionComponent, CallToActionComponent, CategoriesGridComponent, CategoriesSectionComponent, CheckoutSectionComponent, FeaturedProductComponent, FooterSectionComponent, MainHeroComponent, NavigationBarComponent, ProductDetailComponent, ShoppingCartDetailsComponent, CategoriesPageComponent, CheckoutPageComponent, HomePageComponent, ProductDetailPageComponent],
-  imports: [BrowserModule, HttpClientModule],
-  providers: [ProductService],
+  declarations: [
+    AppComponent,
+    CategoriesPageComponent,
+    HomePageComponent,
+    ProductDetailPageComponent,
+    CheckoutPageComponent,
+    ShoppingCartDetailsComponent,
+  ],
+  imports: [SharedModule, BrowserModule, AppRoutingModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
