@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Chetachi/CapstoneProjectSpring2022/main/assets/tobi-header.png">
+<img src="https://raw.githubusercontent.com/chetachiezikeuzor/CapstoneProjectSpring2022/main/assets/tobi-header.png">
 
 <h1 align="center">Tobi</h1>
 
