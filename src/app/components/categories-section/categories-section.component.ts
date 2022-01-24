@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/common/category';
-import { ProductCategoriesService } from 'src/app/services/product-categories.service';
+import { ProductCategory } from 'src/app/common/product-category';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-categories-section',
@@ -8,15 +8,15 @@ import { ProductCategoriesService } from 'src/app/services/product-categories.se
   styleUrls: ['./categories-section.component.css'],
 })
 export class CategoriesSectionComponent implements OnInit {
-  categories: Category[] = [];
-  constructor(private categoryService: ProductCategoriesService) {}
+  categories: ProductCategory[] = [];
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.listCategories();
   }
 
   listCategories() {
-    this.categoryService.getCategoryList().subscribe((data) => {
+    this.productService.getProductCategories().subscribe((data) => {
       this.categories = data;
       console.log(data);
     });

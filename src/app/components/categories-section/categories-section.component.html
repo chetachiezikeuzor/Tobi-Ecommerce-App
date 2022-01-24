@@ -24,7 +24,9 @@
             class="category-item dynamic-item"
             *ngFor="let tempCategory of categories"
           >
-            <a href="/" class="category-link-block inline-block"
+            <a
+              routerLink="/categories/{{ tempCategory.id }}"
+              class="category-link-block inline-block"
               ><div class="category-image-wrapper">
                 <img
                   src="{{ tempCategory.categoryImageUrl }}"

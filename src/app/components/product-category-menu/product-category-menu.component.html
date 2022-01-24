@@ -1,1 +1,18 @@
-<p>product-category-menu works!</p>
+<div role="list" class="menu-vertical text-small dynamic-items">
+  <div
+    role="listitem"
+    class="dynamic-item"
+    *ngFor="let tempCategory of productCategories"
+  >
+    <a
+      routerLink="/categories/{{ tempCategory.id }}"
+      routerLinkActive="link-current"
+      aria-current="page"
+      class="hover-link"
+      >{{ tempCategory?.categoryName }}</a
+    >
+  </div>
+  <div role="listitem" class="dynamic-item">
+    <a href="/categories/" class="hover-link">Shop All</a>
+  </div>
+</div>

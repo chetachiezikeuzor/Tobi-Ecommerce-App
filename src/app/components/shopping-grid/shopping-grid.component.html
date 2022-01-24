@@ -1,4 +1,4 @@
-<section class="section margin-tb-9-5">
+<section class="section margin-tb-9-5" style="scroll-behavior: smooth">
   <div class="container">
     <header class="category-header">
       <h2>Shop All</h2>
@@ -14,27 +14,7 @@
             <div class="inner-padding-right">
               <div class="sticky-section">
                 <div class="dynamic-list">
-                  <div
-                    role="list"
-                    class="menu-vertical text-small dynamic-items"
-                  >
-                    <div
-                      role="listitem"
-                      class="dynamic-item"
-                      *ngFor="let tempCategory of categories"
-                    >
-                      <a
-                        [routerLink]="['/categories/1']"
-                        routerLinkActive="link-current"
-                        aria-current="page"
-                        class="hover-link"
-                        >{{ tempCategory?.categoryName }}</a
-                      >
-                    </div>
-                    <div role="listitem" class="dynamic-item">
-                      <a href="/categories/" class="hover-link">Shop All</a>
-                    </div>
-                  </div>
+                  <app-product-category-menu></app-product-category-menu>
                 </div>
               </div>
             </div>

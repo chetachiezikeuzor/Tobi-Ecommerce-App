@@ -1,0 +1,41 @@
+.sidebar {
+  position: sticky;
+  top: 94px;
+}
+.menu-vertical {
+  display: grid;
+  min-width: 260px;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 6px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+.text-small {
+  font-size: 16px;
+  line-height: 24px;
+}
+.hover-link {
+  opacity: 0.5;
+  font-size: 1.368em;
+  color: var(--jadeGreen);
+  text-decoration: none;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+.link-current {
+  opacity: 1;
+  font-weight: 700;
+}
+.menu-vertical .dynamic-item {
+  border-bottom: 1px solid rgba(34, 66, 41, 0.16);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  list-style: none;
+  overflow: hidden;
+  padding: 12px 0;
+  position: relative;
+  text-transform: uppercase;
+}
