@@ -4,17 +4,21 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { CheckoutSectionComponent } from './components/checkout-section/checkout-section.component';
 import { ShoppingPageComponent } from './pages/shopping-page/shopping-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'shop', component: ShoppingPageComponent },
-  { path: 'categories/{id}', component: ShoppingPageComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'categories', component: ShoppingPageComponent },
+  { path: 'categories/:id', component: ShoppingPageComponent },
+  { path: 'categories', component: ShoppingPageComponent },
   { path: 'checkout', component: CheckoutSectionComponent },
-  { path: 'product-detail', component: ProductDetailComponent },
+  { path: 'products', component: ProductDetailComponent },
+  { path: '', component: HomePageComponent },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), BrowserModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from 'src/app/components/footer-section/footer-section.component';
 import { NavigationBarComponent } from '../components/navigation-bar/navigation-bar.component';
@@ -36,6 +37,6 @@ import { ProductDetailComponent } from '../components/product-detail/product-det
     ProductDetailComponent,
     ShoppingGridComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
 })
 export class SharedModule {}
