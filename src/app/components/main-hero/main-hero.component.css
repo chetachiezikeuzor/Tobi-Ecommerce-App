@@ -1,0 +1,142 @@
+.main-hero-section {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  margin-bottom: 3em;
+  padding-right: 5em;
+  padding-left: 5em;
+  -webkit-box-align: end;
+  align-items: flex-end;
+}
+.hero-background-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.hero-background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../../assets/images/site/pawel-czerwinski-unsplash_ADJ.jpg");
+  background-position: 100% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-content {
+  position: relative;
+  width: 45%;
+  padding-bottom: 10em;
+}
+.all-caps.title {
+  font-size: 1.25em;
+}
+.all-caps {
+  padding-bottom: 1em;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.cursive {
+  color: #212806;
+  font-style: italic;
+}
+.button-wrapper {
+  display: inline-block;
+  padding-top: 3.5em;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+.button-text {
+  display: inline-block;
+}
+.button-arrow {
+  position: relative;
+  bottom: -2px;
+  display: inline-block;
+  width: 32px;
+  margin-left: 1em;
+}
+.hero-reviews-wrapper {
+  position: absolute;
+  left: 15%;
+  bottom: -3em;
+  width: 70%;
+  padding: 1.5em 6.5em;
+  background-color: var(--granite);
+}
+.starts-content {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.stars-image {
+  margin-right: 1em;
+  margin-left: 1em;
+  margin-bottom: 4px;
+}
+.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.feature-paragraph {
+  font-size: 1.5em;
+  color: var(--alfalfa) !important;
+}
+@media screen and (min-width: 1440px) {
+  .all-caps {
+    padding-bottom: 0.5em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .main-hero-section {
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+  .hero-reviews-wrapper {
+    position: absolute;
+    left: 15%;
+    bottom: -3em;
+    width: 70%;
+    text-align: center;
+    padding: 1.5em 3.5em;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--granite);
+  }
+  .starts-content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hero-content {
+    width: 100%;
+    padding-top: 12em;
+    padding-bottom: 0;
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+  }
+}
+@media screen and (max-width: 991px) {
+  .all-caps.title {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .all-caps {
+    padding-bottom: 0.5em;
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .button-wrapper {
+    padding-top: 2em;
+  }
+}

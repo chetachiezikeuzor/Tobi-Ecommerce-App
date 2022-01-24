@@ -1,1 +1,38 @@
-<p>navigation-bar works!</p>
+<div style="opacity: 1" class="wrapper-sticky">
+  <div data-animation="over-left" class="navigation tobi-navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-link" style="text-decoration: none"
+        ><h4
+          style="
+            font-style: italic;
+            font-weight: 500;
+            padding: 9px 15px;
+            margin-bottom: -8px;
+            line-height: 0;
+          "
+        >
+          tobi
+          <img src="assets/images/site/favicon.png" height="17px" /></h4></a
+      ><link rel="prefetch" href="/" />
+      <nav role="navigation" class="nav-menu tobi-navigation-menu">
+        <ul class="navigation-wrapper">
+          <li class="nav-link">
+            <a>Shop</a>
+          </li>
+          <li class="nav-link">
+            <a>About</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="ecommerce-commerce-cart-wrapper cart">
+        <button
+          class="ecommerce-cart-open-link cart-button inline-block"
+          (click)="cartDisplayStatus(true)"
+        >
+          <i class="ph ph-shopping-cart-bold" style="font-size: 18px"></i>
+          <div class="ecommerce-cart-open-link-count cart-quantity">0</div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
