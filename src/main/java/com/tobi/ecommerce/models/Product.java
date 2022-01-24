@@ -37,23 +37,14 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "shipping_info")
-    private String shippingInfo;
-
-    @Column(name = "packaging_info")
-    private String packagingInfo;
-
     @Column(name = "unit_price")
     private BigDecimal unitPrice;
 
     @Column(name = "image_url")
     private String imageUrl;
 
-    @Column(name = "image_alt1_url")
-    private String imageAlt1Url;
-
-    @Column(name = "image_alt2_url")
-    private String imageAlt2Url;
+    @Column(name = "image_alt_url")
+    private String imageAltUrl;
 
     @Column(name = "active")
     private boolean active;
