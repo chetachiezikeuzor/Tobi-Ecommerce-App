@@ -8,9 +8,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
-  { path: 'categories', component: ShoppingPageComponent },
   { path: 'categories/:id', component: ShoppingPageComponent },
   { path: 'categories', component: ShoppingPageComponent },
+  { path: 'shop', component: ShoppingPageComponent },
   { path: 'checkout', component: CheckoutSectionComponent },
   { path: 'products', component: ProductDetailComponent },
   { path: '', component: HomePageComponent },
@@ -18,7 +18,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), BrowserModule],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+    BrowserModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
