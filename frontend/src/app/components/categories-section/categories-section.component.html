@@ -1,0 +1,49 @@
+<section class="section margin-bottom-9-5">
+  <div class="container">
+    <div class="inner-spacing category-section-container">
+      <div class="category-section-content-wrapper">
+        <div>
+          <h3>Shop by Category</h3>
+          <p>
+            Have a use case in mind? Let's make your search easier! Try
+            exploring our product categories to find exactly what you need!
+            <br />
+          </p>
+          <div class="button-wrapper">
+            <a href="/shop" class="button inline-block"
+              ><div class="button-text">Shop Now</div>
+              <i class="ph ph-arrow-right-bold"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="category-sections">
+        <div role="list" class="grid-4-column dynamic-items">
+          <div
+            role="listitem"
+            class="category-item dynamic-item"
+            *ngFor="let tempCategory of categories"
+          >
+            <a href="/" class="category-link-block inline-block"
+              ><div class="category-image-wrapper">
+                <img
+                  src="{{ tempCategory.categoryImageUrl }}"
+                  loading="lazy"
+                  class="category-image"
+                />
+              </div>
+              <div
+                style="background-color: var(--granite)"
+                class="category-content-wrapper"
+              >
+                <h4 class="product-title" style="color: var(--alfalfa)">
+                  {{ tempCategory.categoryName }}
+                </h4>
+              </div></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

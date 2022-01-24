@@ -1,0 +1,10 @@
+<app-navigation-bar
+  [showCart]="showCart"
+  (showCartChange)="changeDisplay($event)"
+></app-navigation-bar>
+<router-outlet></router-outlet>
+<app-shopping-cart-details
+  [showCart]="showCart"
+  (showCartChange)="changeDisplay($event)"
+></app-shopping-cart-details>
+<app-footer></app-footer>

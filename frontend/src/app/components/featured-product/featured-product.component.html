@@ -1,0 +1,44 @@
+<section class="section margin-tb-9-5">
+  <div class="container">
+    <div class="dynamic-list">
+      <div role="list" class="dynamic-items">
+        <div
+          role="listitem"
+          class="dynamic-item"
+          *ngFor="let tempProduct of products"
+        >
+          <div
+            class="flex-wrapper inner-spacing reverse-wrap"
+            *ngIf="tempProduct?.featured"
+          >
+            <div class="column-50 inner-padding-right">
+              <div class="sticky-section">
+                <div class="all-caps">Featured</div>
+                <h3>{{ tempProduct?.name }}</h3>
+                <div class="mobile-none product-rich-text">
+                  <p>{{ tempProduct?.description }}</p>
+                </div>
+                <div class="button-wrapper">
+                  <a href="/shop" class="button outline inline-block"
+                    ><div class="button-text">Shop Now</div>
+                    <i class="ph ph-arrow-right-bold"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="column-50">
+              <div class="image-wrapper">
+                <img
+                  src="{{ tempProduct?.imageUrl }}"
+                  loading="lazy"
+                  sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 47vw, (max-width: 1439px) 40vw, 100vw"
+                  class="image-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

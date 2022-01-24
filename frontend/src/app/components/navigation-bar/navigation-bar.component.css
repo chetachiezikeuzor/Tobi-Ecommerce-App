@@ -1,0 +1,133 @@
+.wrapper-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  z-index: 990;
+  margin-bottom: -70px;
+}
+.navigation {
+  display: flex;
+  height: 70px;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: transparent;
+}
+.tobi-navigation {
+  position: relative;
+  background: rgba(221, 221, 221, 0);
+  z-index: 1000;
+}
+.tobi-navigation:after,
+.tobi-navigation:before {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.nav-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: none;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5em 2em;
+  align-items: center;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+.home {
+  z-index: 3;
+}
+.tobi-navigation-brand {
+  position: relative;
+  float: left;
+  text-decoration: none;
+  color: #333;
+}
+.navigation-wrapper {
+  display: flex;
+  margin-bottom: 0;
+}
+.nav-menu {
+  position: static;
+  padding-left: 2em;
+  flex: 1;
+}
+.logo-home {
+  width: 100px;
+}
+.nav-link {
+  font-family: var(--header-font);
+  position: relative;
+  z-index: 2;
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: 500;
+  border-radius: 0;
+  border-width: 0;
+  color: var(--deep-shadow);
+  cursor: pointer;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.nav-link:hover {
+  font-style: italic;
+}
+.ecommerce-commerce-cart-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.cart-button {
+  padding: 0.5em 0 0.5em 1em;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  background-color: transparent;
+}
+.ecommerce-cart-open-link {
+  border-radius: 0;
+  border-width: 0;
+  color: var(--deep-shadow);
+  cursor: pointer;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  appearance: none;
+}
+.cart-quantity {
+  margin-left: -6px;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  border-radius: 0;
+  background-color: transparent;
+  color: #212806;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.ecommerce-cart-open-link-count {
+  display: inline-block;
+  height: 20px;
+  min-width: 20px;
+  margin-left: 8px;
+  padding-right: 6px;
+  padding-left: 6px;
+  border-radius: 999px;
+  color: #fff;
+  background-color: var(--deep-shadow);
+  font-size: 11px;
+  line-height: 24px;
+  font-weight: 700;
+  text-align: center;
+}
