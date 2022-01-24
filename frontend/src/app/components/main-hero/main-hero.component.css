@@ -42,8 +42,11 @@
   text-transform: uppercase;
 }
 .cursive {
-  color: #212806;
   font-style: italic;
+  background: url("../../../assets/images/site/ren-ran-unsplash.jpg") no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .button-wrapper {
   display: inline-block;
