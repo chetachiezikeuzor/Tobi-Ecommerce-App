@@ -18,8 +18,13 @@ public class ProductCategory {
     @Column(name = "category_name")
     private String categoryName;
 
+    @Column(name = "category_image_url")
+    private String categoryImg;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private Set<Product> products;
+
+
 
 }
 
