@@ -2,24 +2,24 @@
   <div class="container">
     <div class="dynamic-list">
       <div role="list" class="dynamic-items">
-        <div role="listitem" class="dynamic-item">
-          <div class="flex-wrapper inner-spacing reverse-wrap">
+        <div
+          role="listitem"
+          class="dynamic-item"
+          *ngFor="let tempProduct of products"
+        >
+          <div
+            class="flex-wrapper inner-spacing reverse-wrap"
+            *ngIf="tempProduct?.featured"
+          >
             <div class="column-50 inner-padding-right">
               <div class="sticky-section">
                 <div class="all-caps">Featured</div>
-                <h3>Sample Product</h3>
+                <h3>{{ tempProduct?.name }}</h3>
                 <div class="mobile-none product-rich-text">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
+                  <p>{{ tempProduct?.description }}</p>
                 </div>
                 <div class="button-wrapper">
-                  <a href="/" class="button outline inline-block"
+                  <a href="/shop" class="button outline inline-block"
                     ><div class="button-text">Shop Now</div>
                     <i class="ph ph-arrow-right-bold"></i>
                   </a>
@@ -29,7 +29,7 @@
             <div class="column-50">
               <div class="image-wrapper">
                 <img
-                  src="assets/images/categories/ceyda-ciftci-unsplash.jpg"
+                  src="{{ tempProduct?.imageUrl }}"
                   loading="lazy"
                   sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 47vw, (max-width: 1439px) 40vw, 100vw"
                   class="image-cover"

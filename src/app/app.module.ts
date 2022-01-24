@@ -6,23 +6,25 @@ import { SharedModule } from './shared-module/shared.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CategoriesPageComponent } from './pages/categories-page/categories-page.component';
+import { ShoppingPageComponent } from './pages/shopping-page/shopping-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesPageComponent,
+    ShoppingPageComponent,
     HomePageComponent,
     ProductDetailPageComponent,
     CheckoutPageComponent,
     ShoppingCartDetailsComponent,
   ],
-  imports: [SharedModule, BrowserModule, AppRoutingModule],
-  providers: [],
+  imports: [SharedModule, BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [ProductService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-categories-page',
-  templateUrl: './categories-page.component.html',
-  styleUrls: ['./categories-page.component.css'],
+  selector: 'app-shopping-page',
+  templateUrl: './shopping-page.component.html',
+  styleUrls: ['./shopping-page.component.css'],
 })
-export class CategoriesPageComponent implements OnInit {
+export class ShoppingPageComponent implements OnInit {
   showCart = false;
   constructor() {}
 

@@ -5,11 +5,12 @@
         <div>
           <h3>Shop by Category</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
+            Have a use case in mind? Let's make your search easier! Try
+            exploring our product categories to find exactly what you need!
+            <br />
           </p>
           <div class="button-wrapper">
-            <a href="/" class="button inline-block"
+            <a href="/shop" class="button inline-block"
               ><div class="button-text">Shop Now</div>
               <i class="ph ph-arrow-right-bold"></i>
             </a>
@@ -18,76 +19,25 @@
       </div>
       <div class="category-sections">
         <div role="list" class="grid-4-column dynamic-items">
-          <div role="listitem" class="category-item dynamic-item">
+          <div
+            role="listitem"
+            class="category-item dynamic-item"
+            *ngFor="let tempCategory of categories"
+          >
             <a href="/" class="category-link-block inline-block"
               ><div class="category-image-wrapper">
                 <img
-                  src="assets/images/categories/ceyda-ciftci-unsplash.jpg"
+                  src="{{ tempCategory.categoryImageUrl }}"
                   loading="lazy"
                   class="category-image"
                 />
               </div>
               <div
-                style="background-color: #894230"
+                style="background-color: var(--granite)"
                 class="category-content-wrapper"
               >
                 <h4 class="product-title" style="color: var(--alfalfa)">
-                  Home & Indoor
-                </h4>
-              </div></a
-            >
-          </div>
-          <div role="listitem" class="category-item dynamic-item">
-            <a href="/" class="category-link-block inline-block"
-              ><div class="category-image-wrapper">
-                <img
-                  src="assets/images/categories/sarah-dorweiler-unsplash.jpg"
-                  loading="lazy"
-                  class="category-image"
-                />
-              </div>
-              <div
-                style="background-color: #ebebeb"
-                class="category-content-wrapper"
-              >
-                <h4 class="product-title">Low Maintenance</h4>
-              </div></a
-            >
-          </div>
-          <div role="listitem" class="category-item dynamic-item">
-            <a href="/" class="category-link-block inline-block"
-              ><div class="category-image-wrapper">
-                <img
-                  src="assets/images/categories/skyler-smith-unsplash.jpg"
-                  loading="lazy"
-                  class="category-image"
-                />
-              </div>
-              <div
-                style="background-color: #9d8a83"
-                class="category-content-wrapper"
-              >
-                <h4 class="product-title" style="color: var(--alfalfa)">
-                  Large & Extra Large
-                </h4>
-              </div></a
-            >
-          </div>
-          <div role="listitem" class="category-item dynamic-item">
-            <a href="/" class="category-link-block inline-block"
-              ><div class="category-image-wrapper">
-                <img
-                  src="assets/images/categories/vadim-kaipov-unsplash.jpg"
-                  loading="lazy"
-                  class="category-image"
-                />
-              </div>
-              <div
-                style="background-color: #166408"
-                class="category-content-wrapper"
-              >
-                <h4 class="product-title" style="color: var(--alfalfa)">
-                  Animal Friendly
+                  {{ tempCategory.categoryName }}
                 </h4>
               </div></a
             >
