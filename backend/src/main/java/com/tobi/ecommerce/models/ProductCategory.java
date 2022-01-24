@@ -1,12 +1,15 @@
 package com.tobi.ecommerce.models;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name="product_categories")
 public class ProductCategory {
 
@@ -19,12 +22,13 @@ public class ProductCategory {
     private String categoryName;
 
     @Column(name = "category_image_url")
-    private String categoryImg;
+    private String categoryImageUrl;
+
+    @Column(name = "category_color")
+    private String categoryColor;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private Set<Product> products;
-
-
 
 }
 
