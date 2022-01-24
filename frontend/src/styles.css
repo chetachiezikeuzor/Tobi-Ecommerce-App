@@ -1,1 +1,279 @@
-/* You can add global styles to this file, and also import other style files */
+/*-----------------
+VARIABLES
+------------------*/
+
+:root {
+  --header-height: 5rem;
+
+  --beige: #f3f1e3;
+  --pink-beige: #fdf2f2;
+  --dark-beige: #e0cfba;
+
+  --granite: #030304;
+  --white-eade: #feffff;
+  --alfalfa: #f8f8f8;
+  --smoke-white: #f8f9fd;
+  --alice-blue: #e3e7ef;
+  --ice-blue: #eaeef5;
+  --rose-red: #ff5582;
+  --border-shade: #e5ecf5;
+  --electric-pink: #f9ccff;
+  --deep-shadow: #171c26;
+  --deep-coven: #66666e;
+  --jadeGreen: #103a2d;
+
+  --sleak-bold: hsla(45, 5%, 86%, 100%);
+  --sleak-medium: hsla(40, 5%, 89%, 100%);
+  --pink-light: hsl(292, 57%, 97%);
+  --blue-eade: hsla(214, 10%, 86%, 100%);
+  --white-alpha-75: rgba(255, 255, 255, 0.6);
+  --white-alpha-40: rgba(255, 255, 255, 0.4);
+  --white-alpha-36: rgba(255, 255, 255, 0.36);
+  --white-alpha-12: rgba(255, 255, 255, 0.12);
+
+  --tooltip-zindex: 10;
+  --z-fixed: 100;
+
+  --backdrop-blur-light: blur(8px);
+  --backdrop-blur-medium: blur(12px);
+  --backdrop-blur-max: blur(16px);
+
+  --default-font: THICCCBOI, -apple-system, BlinkMacSystemFont, "DM Sans",
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  --monospace-font: RelativeMono, monospace;
+  --header-font: Corben, -apple-system, BlinkMacSystemFont, "DM Sans",
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  --text-normal: var(--deep-shadow);
+  --text-muted: var(--deep-coven);
+}
+body {
+  margin: 0;
+  background-color: var(--beige);
+  font-family: var(--default-font);
+  color: #212806;
+  font-size: 1vw;
+  line-height: 1;
+  font-weight: 400;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+body {
+  background: linear-gradient(to bottom, var(--beige), var(--beige)),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+code {
+  font-family: var(--monospace-font);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--header-font);
+}
+h4,
+h5,
+h6 {
+  font-family: var(--default-font);
+}
+h1 {
+  margin: 0 0 0.25em;
+  font-size: 4.5em;
+  line-height: 120%;
+  font-weight: 300;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+  font-size: 3.75em;
+  line-height: 120%;
+  font-weight: 300;
+}
+h3 {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  font-size: 3em;
+  line-height: 120%;
+  font-weight: 300;
+}
+h4 {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+  font-size: 1.15em;
+  line-height: 140%;
+  font-weight: 300;
+}
+h5 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
+  line-height: 120%;
+  font-weight: 300;
+}
+p {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  color: var(--text-normal);
+  font-size: 1.25em;
+  line-height: 160%;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--pink-beige);
+}
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: var(--beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark-beige);
+  border-radius: 0px;
+}
+.button {
+  position: relative;
+  display: flex;
+  padding: 0.5em 1.5em 0.6em;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 2px solid var(--granite);
+  border-radius: 40px;
+  background-color: var(--granite);
+  color: var(--white-eade);
+  font-size: 1.25em;
+  line-height: 120%;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 3s;
+}
+.button:hover {
+  font-style: italic;
+  color: var(--white-eade);
+}
+.button:hover i.ph {
+  translate: 6px;
+}
+.button-wrapper {
+  display: inline-block;
+  padding-top: 3.5em;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+.section.margin-tb-9-5 {
+  padding-top: 9.5em;
+  padding-bottom: 9.5em;
+}
+.section.margin-top-9-5 {
+  padding-top: 9.5em;
+}
+.section {
+  padding-top: 6.5em;
+  padding-bottom: 6.5em;
+}
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 5em;
+  padding-left: 5em;
+}
+.inner-spacing {
+  padding-right: 5em;
+  padding-left: 5em;
+}
+.relative {
+  position: relative;
+}
+.heading-wrapper-centered {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 3.5em;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .section.margin-tb-9-5 {
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+  }
+}
+@media screen and (max-width: 991px) {
+  .section.margin-tb-9-5 {
+    padding-top: 6.5em;
+    padding-bottom: 6.5em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .flex-wrapper.inner-spacing.reverse-wrap {
+    -webkit-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+}
+@media screen and (max-width: 767px) {
+  .flex-wrapper {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 991px) {
+  .inner-spacing {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  .inner-padding-right {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  .column-50 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .sticky-section {
+    position: relative;
+    top: 2em;
+  }
+}
+@media screen and (max-width: 991px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 991px) {
+  h5 {
+    margin-bottom: 0.25em;
+    font-size: 1.25em;
+  }
+}
+@media screen and (max-width: 991px) {
+  h4 {
+    font-size: 1.5em;
+  }
+}
