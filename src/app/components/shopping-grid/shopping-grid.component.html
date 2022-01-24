@@ -24,9 +24,10 @@
                       *ngFor="let tempCategory of categories"
                     >
                       <a
-                        href="/categories/"
+                        [routerLink]="['/categories/1']"
+                        routerLinkActive="link-current"
                         aria-current="page"
-                        class="hover-link link-current"
+                        class="hover-link"
                         >{{ tempCategory?.categoryName }}</a
                       >
                     </div>

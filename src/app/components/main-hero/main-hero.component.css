@@ -43,10 +43,7 @@
 }
 .cursive {
   font-style: italic;
-  background: url("../../../assets/images/site/ren-ran-unsplash.jpg") no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--jadeGreen);
 }
 .button-wrapper {
   display: inline-block;

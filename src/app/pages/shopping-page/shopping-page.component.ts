@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/common/category';
+import { Product } from 'src/app/common/product';
+import { ProductService } from 'src/app/services/product.service';
+import { ProductCategoriesService } from 'src/app/services/product-categories.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shopping-page',
@@ -7,12 +12,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingPageComponent implements OnInit {
   showCart = false;
-  constructor() {}
+  products: Product[] = [];
+  categories: Category[] = [];
+  currentCategoryId?: number;
+  constructor(
+    private productService: ProductService,
+    private categoryService: ProductCategoriesService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.route.paramMap.subscribe(() => {
+      this.listProducts();
+    });
+    this.listCategories();
+  }
 
-  changeDisplay = (status: boolean) => {
-    this.showCart = status;
-    console.log(status);
-  };
+  listProducts() {
+    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
+    if (hasCategoryId) {
+      //@ts-ignore
+      this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
+    } else {
+      this.currentCategoryId = 1;
+    }
+    this.productService
+      .getProductList(this.currentCategoryId)
+      .subscribe((data) => {
+        this.products = data;
+        console.log(data);
+      });
+  }
+
+  listCategories() {
+    this.categoryService.getCategoryList().subscribe((data) => {
+      this.categories = data;
+      console.log(data);
+    });
+  }
 }

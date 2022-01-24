@@ -13,6 +13,7 @@ import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.compo
 import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductService } from './services/product.service';
     ProductDetailPageComponent,
     CheckoutPageComponent,
     ShoppingCartDetailsComponent,
+    ProductCategoryMenuComponent,
   ],
   imports: [SharedModule, BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [ProductService],
