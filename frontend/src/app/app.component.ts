@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Tobi Shop';
+  title = 'Tobi';
+  showCart = false;
+
+  changeDisplay = (status: boolean) => {
+    this.showCart = status;
+    console.log(status);
+  };
 }
