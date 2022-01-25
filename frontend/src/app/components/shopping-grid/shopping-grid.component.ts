@@ -23,6 +23,10 @@ export class ShoppingGridComponent implements OnInit {
     });
   }
 
+  doSomething(input: string) {
+    console.log(input);
+  }
+
   listProducts() {
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
     if (hasCategoryId) {
