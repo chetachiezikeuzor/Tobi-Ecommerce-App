@@ -17,7 +17,7 @@
 
 ## About <a name = "about"></a>
 
-Tobi is an full-stack e-commerce web application built in Angular and Java Spring Boot. The application was created and designed to beanonline marketplace for plant products. Features include: routing, Stripe credit card payments, application security and more.
+Tobi is an full-stack e-commerce web application built in Angular and Java Spring Boot. The application was created and designed to be an online marketplace for plant products. Features include: routing, Stripe credit card payments, application security and more.
 
 ## Getting Started <a name = "getting_started"></a>
 
