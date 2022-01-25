@@ -34,18 +34,16 @@ Examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Step 1:
+Installing the project is quite simple. In your terminal, navigate to the location by which you would like to house the repository. You can use the following command:
 
 ```
-Examples
+cd <directory>
 ```
 
-Step 2:
+Copy the repository URL by clicking "Code" and choosing the "HTTPS" method (you can configure this step as you wish). Use the following command in yout terminal to clone the repository.
 
 ```
-Examples
+git clone <repo-url>
 ```
 
 End with an example of getting some data out of the system or using it for a little demo.
