@@ -20,7 +20,7 @@ Tobi is an full-stack e-commerce web application built in Angular and Java Sprin
 
 ## Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [testing](#tests) for notes on how to test the project after installation.
 
 ### Prerequisites
 
