@@ -10,6 +10,7 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
+- [Usage](#usage)
 - [Running Tests](#tests)
 - [Built Using](#built_using)
 - [Author](#author)
@@ -24,11 +25,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+These are the tools and technologies that you'll need to get this project running:
 
-```
-Examples
-```
+| Tool | Purpose                                                                        |
+| ---- | ------------------------------------------------------------------------------ |
+| node | For running JavaScript code from command-line                                  |
+| nvm  | Node Version Manager                                                           |
+| npm  | Node Package Manager: Download new node package and features. Similar to Maven |
+| tsc  | TypeScript Compiler                                                            |
+| Java | Server-side                                                                    |
 
 ### Installing
 
@@ -73,7 +78,9 @@ GET http://localhost:8008/api/products
 GET http://localhost:8008/api/product-categories
 ```
 
-You're now ready to run the frontend side of the project. Navigate to the frontend folder and start the Angular serverr using this command
+## Usage <a name="usage"></a>
+
+You're now ready to run the frontend side of the project. Navigate to the frontend folder and start the Angular server using this command
 
 ```
 ng serve --open
@@ -94,6 +101,6 @@ This will build the frontend files and automatically open your browser to `http:
 - [MySQL](https://www.mysql.com) - Database
 - [Angular](https://angular.io) - User Interface
 
-## Author <a id = "author"></a>
+## Authors <a id = "authors"></a>
 
 - [@Chetachi](https://github.com/chetachiezikeuzor)
