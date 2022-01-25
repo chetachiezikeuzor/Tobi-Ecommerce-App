@@ -85,7 +85,7 @@ or
 ng serve --o
 ```
 
-This will build the frontend files and automaticallyopen your browser to `http://localhost:4200/`.
+This will build the frontend files and automatically open your browser to `http://localhost:4200/`.
 
 ## Built Using <a id = "built_using"></a>
 
