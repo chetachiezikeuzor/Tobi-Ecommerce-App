@@ -27,6 +27,7 @@
                   <div
                     role="listitem"
                     class="dynamic-item"
+                    style="text-align: center"
                     *ngFor="let tempProduct of products"
                   >
                     <a href="/" class="product-link inline-block"
@@ -42,8 +43,32 @@
                         {{ tempProduct?.unitPrice | currency: "USD" }}
                       </div>
                     </a>
+                    <div class="button-wrapper" style="padding-top: 1em">
+                      <button
+                        class="button inline-block"
+                        style="text-align: center; justify-content: center"
+                      >
+                        <div class="button-text">Add to cart</div>
+                      </button>
+                    </div>
                   </div>
                 </div>
+              </div>
+              <div
+                *ngIf="products?.length == 0"
+                class="alert"
+                style="
+                  display: block;
+                  width: 100%;
+                  font-size: 1.23em;
+                  border: 1px solid #cdc3918c;
+                  background-color: #cdc3913a;
+                  padding: 20px 40px;
+                  color: #cdc391;
+                  line-height: 32px;
+                "
+              >
+                No products found.
               </div>
             </div>
           </div>

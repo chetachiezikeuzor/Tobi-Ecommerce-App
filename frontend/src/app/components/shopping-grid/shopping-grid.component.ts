@@ -13,6 +13,7 @@ export class ShoppingGridComponent implements OnInit {
   products: Product[] = [];
   currentCategoryId?: number;
   currentCategory?: ProductCategory[] = [];
+  searchMode?: boolean;
 
   constructor(
     private productService: ProductService,
@@ -30,6 +31,24 @@ export class ShoppingGridComponent implements OnInit {
   }
 
   listProducts() {
+    this.searchMode = this.route.snapshot.paramMap.has('keyword');
+    if (this.searchMode) {
+      this.handleSearchProducts();
+    } else {
+      this.handleListProducts();
+    }
+  }
+
+  handleSearchProducts() {
+    const theKeyword: string | null =
+      this.route.snapshot.paramMap.get('keyword');
+    this.productService.searchProducts(theKeyword).subscribe((data) => {
+      this.products = data;
+      console.log(data);
+    });
+  }
+
+  handleListProducts() {
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
     if (hasCategoryId) {
       //@ts-ignore
