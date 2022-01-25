@@ -66,7 +66,7 @@ spring.data.rest.base-path=/api
 
 You'll need to provide your own username and password for your local instance. This will allow for Spring Boot to have access to your database. You may also redefine the server port as you wish.
 
-## Running the tests <a name = "tests"></a>
+## Running the Tests <a name = "tests"></a>
 
 Once you have this finished, you can test your api end points in an application like Postman. Use the dummy SQL data provided within the project. Run this within MySQL Workbench and you should have newly created items within your database. Now run this endpoint in Postman to ensure that your data is accessible forthe frontend.
 
