@@ -1,0 +1,21 @@
+<form
+  class="search-wrapper"
+  style="grid-gap: 12px; width: 100%; display: grid; margin-top: 24px"
+>
+  <input
+    class="text-container-search"
+    dir="ltr"
+    style="border-radius: 40px; width: 100%"
+    #textInput
+    type="text"
+    placeholder="Search a keyword..."
+    (keyup.enter)="doSearch(textInput.value)"
+  />
+  <button
+    (click)="doSearch(textInput.value)"
+    class="button inline-block"
+    style="text-align: center; justify-content: center"
+  >
+    <div class="button-text">Search</div>
+  </button>
+</form>

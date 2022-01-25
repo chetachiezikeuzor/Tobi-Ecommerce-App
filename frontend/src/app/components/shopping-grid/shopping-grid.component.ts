@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/common/product';
 import { ProductService } from 'src/app/services/product.service';
 import { ActivatedRoute } from '@angular/router';
+import { ProductCategory } from 'src/app/common/product-category';
 
 @Component({
   selector: 'app-shopping-grid',
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ShoppingGridComponent implements OnInit {
   products: Product[] = [];
   currentCategoryId?: number;
+  currentCategory?: ProductCategory[] = [];
 
   constructor(
     private productService: ProductService,
@@ -35,6 +37,7 @@ export class ShoppingGridComponent implements OnInit {
     } else {
       this.currentCategoryId = 1;
     }
+
     this.productService
       .getProductList(this.currentCategoryId)
       .subscribe((data) => {
