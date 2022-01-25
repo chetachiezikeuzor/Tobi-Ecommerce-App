@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ProductCategoryMenuComponent } from '../components/product-category-menu/product-category-menu.component';
 import { FooterComponent } from 'src/app/components/footer-section/footer-section.component';
 import { NavigationBarComponent } from '../components/navigation-bar/navigation-bar.component';
 import { CallToActionComponent } from '../components/call-to-action/call-to-action.component';
@@ -24,6 +25,7 @@ import { ProductDetailComponent } from '../components/product-detail/product-det
     CheckoutSectionComponent,
     ProductDetailComponent,
     ShoppingGridComponent,
+    ProductCategoryMenuComponent,
   ],
   exports: [
     FooterComponent,
@@ -36,6 +38,7 @@ import { ProductDetailComponent } from '../components/product-detail/product-det
     CheckoutSectionComponent,
     ProductDetailComponent,
     ShoppingGridComponent,
+    ProductCategoryMenuComponent,
   ],
   imports: [CommonModule, RouterModule],
 })
