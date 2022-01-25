@@ -1,13 +1,13 @@
-<section class="section margin-top-9-5">
+<section class="section margin-top-9-5" style="padding-top: 6.5em">
   <div class="container no-padding-mobile">
     <div class="inner-spacing">
       <div class="breadcrumbs-wrapper">
-        <a href="#" class="breadcrumb-link">go back</a>
+        <a href="/products" class="breadcrumb-link">go back</a>
       </div>
       <div class="product-description-wrapper">
         <div class="product-description-images-wrapper">
           <img
-            src="assets/images/categories/sarah-dorweiler-unsplash.jpg"
+            src="{{ product?.imageUrl }}"
             loading="lazy"
             sizes="(max-width: 479px) 100vw, (max-width: 767px) 45vw, (max-width: 991px) 46vw, 45vw"
             class="product-image-description main"
@@ -21,7 +21,7 @@
                 class="image-gallery-item dynamic-item dynamic-repeater-item"
               >
                 <img
-                  src="assets/images/categories/vadim-kaipov-unsplash.jpg"
+                  src="{{ product?.imageAltUrl }}"
                   loading="lazy"
                   class="product-image-description"
                 />
@@ -31,18 +31,14 @@
         </div>
         <div class="product-description-content-wrapper">
           <div>
-            <div class="all-caps">Category</div>
-            <h3>Sample Product</h3>
+            <h3>{{ product?.name }}</h3>
             <div class="product-price-wrapper">
-              <div class="main-product-price">$&nbsp;4.00&nbsp;</div>
+              <div class="main-product-price">
+                {{ product?.unitPrice | currency: "USD" }}
+              </div>
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              {{ product?.description }}
             </p>
             <div class="product-icons-wrapper">
               <div class="product-single-icon-wrapper">
