@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
+  { path: 'search/:keyword', component: ShoppingPageComponent },
   { path: 'categories/:id', component: ShoppingPageComponent },
   { path: 'categories', component: ShoppingPageComponent },
   { path: 'shop', component: ShoppingPageComponent },
