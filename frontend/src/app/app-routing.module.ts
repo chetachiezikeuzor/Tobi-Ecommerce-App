@@ -8,12 +8,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
+  { path: 'products/:id', component: ProductDetailComponent },
   { path: 'search/:keyword', component: ShoppingPageComponent },
   { path: 'categories/:id', component: ShoppingPageComponent },
   { path: 'categories', component: ShoppingPageComponent },
+  { path: 'products', component: ShoppingPageComponent },
   { path: 'shop', component: ShoppingPageComponent },
   { path: 'checkout', component: CheckoutSectionComponent },
-  { path: 'products', component: ProductDetailComponent },
   { path: '', component: HomePageComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
