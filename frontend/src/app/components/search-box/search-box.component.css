@@ -1,0 +1,16 @@
+.text-container-search {
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: text;
+  height: 28px;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  border: 2px solid transparent;
+  /*
+    border: 2px solid #edebe6;*/
+  border-radius: 0;
+  margin: 0;
+  min-height: 48px;
+  padding: 8px 16px 8px 8px;
+}

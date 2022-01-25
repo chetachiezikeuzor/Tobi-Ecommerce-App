@@ -71,35 +71,11 @@ h5.product-heading {
 }
 .category-header {
   align-items: center;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  max-width: 100%;
   padding: 24px 2em;
-  width: 1440px;
-}
-@media (min-width: 991px) {
-  .select2-container {
-    z-index: 0;
-  }
-}
-.text-container-search {
-  border-radius: 4px;
-  box-sizing: border-box;
-  cursor: text;
-  height: 28px;
-  box-sizing: border-box;
-  display: inline-block;
-  position: relative;
-  border: 2px solid transparent;
-  /*
-  border: 2px solid #edebe6;*/
-  border-radius: 0;
-  margin: 0;
-  min-height: 48px;
-  padding: 8px 16px 8px 8px;
+  margin-bottom: 26px;
 }
 @media screen and (max-width: 991px) {
   .product-grid-twos.sidebar.dynamic-items {
