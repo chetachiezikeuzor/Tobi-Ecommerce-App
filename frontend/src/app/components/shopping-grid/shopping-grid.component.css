@@ -34,6 +34,7 @@
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
 }
+.link-current,
 .hover-link:hover {
   opacity: 1;
 }
