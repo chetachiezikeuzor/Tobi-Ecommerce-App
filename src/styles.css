@@ -166,7 +166,6 @@ p {
   transition: all 3s;
 }
 .button:hover {
-  font-style: italic;
   color: var(--white-eade);
 }
 .button:hover i.ph {
