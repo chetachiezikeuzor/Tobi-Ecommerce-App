@@ -10,11 +10,9 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Deployment](#deployment)
+- [Running Tests](#tests)
 - [Built Using](#built_using)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+- [Author](#author)
 
 ## About <a name = "about"></a>
 
@@ -22,7 +20,7 @@ Tobi is an full-stack e-commerce web application built in Angular and Java Sprin
 
 ## Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [testing](#tests) for notes on how to test the project after installation.
 
 ### Prerequisites
 
@@ -34,35 +32,60 @@ Examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Step 1:
+Installing the project is quite simple. In your terminal, navigate to the location by which you would like to house the repository. You can use the following command:
 
 ```
-Examples
+cd <directory>
 ```
 
-Step 2:
+Copy the repository URL by clicking "Code" and choosing the "HTTPS" method (you can configure this step as you wish). Use the following command in yout terminal to clone the repository.
 
 ```
-Examples
+git clone <repo-url>
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+You now have a local clone of this project. What you will need to dofirst is configure your `application.properties` within the `backend` directory of the project. Here is a template to get you started.
+
+```
+server.port=8008
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/tobi-ecommerce
+spring.datasource.username=username
+spring.datasource.password=password
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.show-sql=true
+spring.jpa.format-sql=true
+spring.data.rest.base-path=/api
+```
+
+You'll need to provide your own username and password for your local instance. This will allow for Spring Boot to have access to your database. You may also redefine the server port as you wish.
 
 ## Running the tests <a name = "tests"></a>
 
+Once you have this finished, you can test your api end points in an application like Postman. Use the dummy SQL data provided within the project. Run this within MySQL Workbench and you should have newly created items within your database. Now run this endpoint in Postman to ensure that your data is accessible forthe frontend.
+
 ```
-Examples
+GET http://localhost:8008/api
+
+GET http://localhost:8008/api/products
+
+GET http://localhost:8008/api/product-categories
 ```
 
-## Usage <a name="usage"></a>
+You're now ready to run the frontend side of the project. Navigate to the frontend folder and start the Angular serverr using this command
 
-Add notes about how to use the system.
+```
+ng serve --open
+```
 
-## Deployment <a id = "deployment"></a>
+or
 
-Add additional notes about how to deploy this on a live system.
+```
+ng serve --o
+```
+
+This will build the frontend files and automatically open your browser to `http://localhost:4200/`.
 
 ## Built Using <a id = "built_using"></a>
 
@@ -71,11 +94,6 @@ Add additional notes about how to deploy this on a live system.
 - [MySQL](https://www.mysql.com) - Database
 - [Angular](https://angular.io) - User Interface
 
-## Authors <a id = "authors"></a>
+## Author <a id = "author"></a>
 
 - [@Chetachi](https://github.com/chetachiezikeuzor)
-
-## Acknowledgements <a name = "acknowledgement"></a>
-
-- Inspiration
-- References
