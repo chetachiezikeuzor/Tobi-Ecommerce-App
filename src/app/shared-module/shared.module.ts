@@ -12,10 +12,12 @@ import { CategoriesSectionComponent } from '../components/categories-section/cat
 import { FeaturedProductComponent } from '../components/featured-product/featured-product.component';
 import { CheckoutSectionComponent } from '../components/checkout-section/checkout-section.component';
 import { ProductDetailComponent } from '../components/product-detail/product-detail.component';
+import { SearchBoxComponent } from '../components/search-box/search-box.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
+    SearchBoxComponent,
     NavigationBarComponent,
     CallToActionComponent,
     MainHeroComponent,
@@ -29,6 +31,7 @@ import { ProductDetailComponent } from '../components/product-detail/product-det
   ],
   exports: [
     FooterComponent,
+    SearchBoxComponent,
     NavigationBarComponent,
     CallToActionComponent,
     MainHeroComponent,
