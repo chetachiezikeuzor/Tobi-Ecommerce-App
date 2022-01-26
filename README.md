@@ -101,6 +101,6 @@ This will build the frontend files and automatically open your browser to `http:
 - [MySQL](https://www.mysql.com) - Database
 - [Angular](https://angular.io) - User Interface
 
-## Authors <a id = "authors"></a>
+## Author <a id = "author"></a>
 
 - [@Chetachi](https://github.com/chetachiezikeuzor)
