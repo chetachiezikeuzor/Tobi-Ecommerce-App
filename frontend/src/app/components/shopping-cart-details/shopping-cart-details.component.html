@@ -5,7 +5,7 @@
   >
     <div class="ecommerce-cart-container cart-container">
       <div class="ecommerce-cart-header cart-header">
-        <h4 class="ecommerce-cart-heading">My Cart</h4>
+        <h4 class="ecommerce-cart-heading">Cart Details</h4>
         <div
           style="cursor: pointer"
           class="ecommerce-cart-close-link cart-close-button"
@@ -21,18 +21,21 @@
       <div class="ecommerce-cart-form-wrapper cart-form-wrapper">
         <form class="ecommerce-cart-form cart-default-state">
           <div id="target" class="ecommerce-cart-list cart-list">
-            <div class="ecommerce-cart-item cart-item">
+            <div
+              class="ecommerce-cart-item cart-item"
+              *ngFor="let tempCartItem of cartItems"
+            >
               <div class="cart-image-wrapper">
                 <img
-                  src="assets/images/site/kendal-unsplash.jpg"
+                  src="{{ tempCartItem?.imageUrl }}"
                   class="ecommerce-cart-item-image cart-product-image"
                 />
               </div>
               <div class="ecommerce-cart-item-info">
                 <div>
-                  <h5 class="cart-item-header">Gray Whale Thank You</h5>
+                  <h5 class="cart-item-header">{{ tempCartItem.name }}</h5>
                   <p class="cart-item-details">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    {{ tempCartItem?.description }}
                   </p>
                   <div class="cart-quantity-wrapper">
                     <select default-value="1" class="quantity-select">
@@ -47,42 +50,16 @@
                   </div>
                 </div>
               </div>
-              <div class="product-price">$&nbsp;4.00&nbsp;</div>
-            </div>
-            <div class="ecommerce-cart-item cart-item">
-              <div class="cart-image-wrapper">
-                <img
-                  src="assets/images/site/pawel-czerwinski-unsplash_ADJ.jpg"
-                  class="ecommerce-cart-item-image cart-product-image"
-                />
+              <div class="product-price">
+                {{ tempCartItem?.unitPrice | currency: "USD" }}
               </div>
-              <div class="ecommerce-cart-item-info">
-                <div>
-                  <h5 class="cart-item-header">New York, London, Paris</h5>
-                  <p class="cart-item-details">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                  <div class="cart-quantity-wrapper">
-                    <select default-value="1" class="quantity-select">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </select>
-                    <a routerLink="/" class="inline-link margin-left-0-5"
-                      ><div>Remove</div></a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="product-price">$&nbsp;13.00&nbsp;</div>
             </div>
           </div>
           <div class="ecommerce-cart-footer cart-footer">
             <div class="ecommerce-cart-line-item cart-line-item">
               <div class="feature-paragraph">Subtotal</div>
               <div class="ecommerce-cart-order-value cart-price">
-                $&nbsp;17.00&nbsp;
+                {{ totalPrice | currency: "USD" }}
               </div>
             </div>
             <div class="margin-top-1">

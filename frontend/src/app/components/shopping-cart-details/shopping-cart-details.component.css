@@ -1,6 +1,9 @@
 .cart-wrapper {
   background-color: rgba(57, 37, 20, 0.5);
 }
+.cart-wrapper ::-webkit-scrollbar {
+  display: none;
+}
 .ecommerce-cart-container-wrapper-cart-type-right-side {
   display: flex;
   -webkit-box-orient: horizontal;
@@ -307,7 +310,7 @@ img {
 }
 .cart-image-wrapper {
   overflow: hidden;
-  height: 180px;
+  height: 136px;
   width: 140px;
 }
 .cart-product-image {
@@ -320,6 +323,10 @@ img {
 }
 .cart-item-details {
   font-size: 1.02em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-y: hidden;
 }
 .ecommerce-cart-line-item {
   display: flex;
