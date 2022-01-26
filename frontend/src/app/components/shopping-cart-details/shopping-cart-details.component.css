@@ -293,7 +293,7 @@ img {
   border-top: 1px solid #e6e6e6;
 }
 .cart-line-item {
-  margin-bottom: 1.5em;
+  margin-bottom: 0em;
 }
 .cart-close-button {
   display: flex;
