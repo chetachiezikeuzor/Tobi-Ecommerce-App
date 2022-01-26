@@ -15,8 +15,6 @@ export class ShoppingCartDetailsComponent implements OnInit {
   cartDisplayStatus(status: boolean) {
     this.showCart = status;
     this.showCartChange.emit(status);
-    console.log('open');
-    console.log(this.showCart);
   }
 
   ngOnInit(): void {}

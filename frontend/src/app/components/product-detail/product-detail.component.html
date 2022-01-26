@@ -65,10 +65,14 @@
           </div>
           <div>
             <div class="button-wrapper">
-              <a href="/" class="button inline-block"
-                ><div class="button-text">Add to Cart</div>
+              <button
+                (click)="addToCart(product)"
+                class="button inline-block"
+                style="text-align: center; justify-content: center"
+              >
+                <div class="button-text">Add to Cart</div>
                 <i class="ph ph-arrow-right-bold"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
