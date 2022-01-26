@@ -18,6 +18,7 @@ export class ShoppingGridComponent implements OnInit {
   thePageNumber: number = 1;
   thePageSize: number = 6;
   theTotalElements: number = 0;
+  previousKeyword?: string | null = null;
 
   constructor(
     private productService: ProductService,
@@ -52,10 +53,21 @@ export class ShoppingGridComponent implements OnInit {
     const theKeyword: string | null =
       this.route.snapshot.paramMap.get('keyword');
 
-    this.productService.searchProducts(theKeyword).subscribe((data) => {
-      this.products = data;
-      console.log(data);
-    });
+    if (this.previousKeyword != theKeyword) {
+      this.thePageNumber = 1;
+    }
+
+    this.previousKeyword = theKeyword;
+
+    console.log(`keyword=${theKeyword}, thePageNumber=${this.thePageNumber}`);
+
+    this.productService
+      .searchProductsPaginate(
+        this.thePageNumber - 1,
+        this.thePageSize,
+        theKeyword
+      )
+      .subscribe(this.processResult());
   }
 
   handleListProducts() {
