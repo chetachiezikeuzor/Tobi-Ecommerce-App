@@ -11,9 +11,13 @@ import { ProductCategory } from 'src/app/common/product-category';
 })
 export class ShoppingGridComponent implements OnInit {
   products: Product[] = [];
-  currentCategoryId?: number;
+  previousCategoryId?: number = 1;
+  currentCategoryId?: number = 1;
   currentCategory?: ProductCategory[] = [];
-  searchMode?: boolean;
+  searchMode?: boolean = false;
+  thePageNumber: number = 1;
+  thePageSize: number = 6;
+  theTotalElements: number = 0;
 
   constructor(
     private productService: ProductService,
@@ -26,8 +30,12 @@ export class ShoppingGridComponent implements OnInit {
     });
   }
 
-  doSomething(input: string) {
-    console.log(input);
+  updatePageSize(e: Event) {
+    const pageSize = e.target as HTMLSelectElement;
+    this.thePageSize = pageSize.value as unknown as number;
+    console.log(this.thePageSize);
+    this.thePageNumber = 1;
+    this.listProducts();
   }
 
   listProducts() {
@@ -37,11 +45,13 @@ export class ShoppingGridComponent implements OnInit {
     } else {
       this.handleListProducts();
     }
+    window.scrollTo(0, 0);
   }
 
   handleSearchProducts() {
     const theKeyword: string | null =
       this.route.snapshot.paramMap.get('keyword');
+
     this.productService.searchProducts(theKeyword).subscribe((data) => {
       this.products = data;
       console.log(data);
@@ -57,11 +67,30 @@ export class ShoppingGridComponent implements OnInit {
       this.currentCategoryId = 1;
     }
 
+    if (this.previousCategoryId != this.currentCategoryId) {
+      this.thePageNumber = 1;
+    }
+
+    this.previousCategoryId = this.currentCategoryId;
+
+    console.log(
+      `c = ${this.currentCategoryId}   p = ${this.previousCategoryId}`
+    );
+
     this.productService
-      .getProductList(this.currentCategoryId)
-      .subscribe((data) => {
-        this.products = data;
-        console.log(data);
-      });
+      .getProductListPaginate(
+        this.thePageNumber - 1,
+        this.thePageSize,
+        this.currentCategoryId
+      )
+      .subscribe(this.processResult());
+  }
+  processResult() {
+    return (data: any) => {
+      this.products = data._embedded.products;
+      this.thePageNumber = data.page.number + 1;
+      this.thePageSize = data.page.size;
+      this.theTotalElements = data.page.totalElements;
+    };
   }
 }
