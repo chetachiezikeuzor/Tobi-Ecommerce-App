@@ -27,8 +27,8 @@ export class CartService {
     }
 
     if (alreadyExistsInCart) {
-      let itemExisting = existingCartItem?.quantity!;
-      if (itemExisting) itemExisting++;
+      //@ts-ignore
+      existingCartItem.quantity++;
     } else {
       this.cartItems.push(theCartItem);
     }
