@@ -14,6 +14,8 @@ import { CheckoutSectionComponent } from '../components/checkout-section/checkou
 import { ProductDetailComponent } from '../components/product-detail/product-detail.component';
 import { SearchBoxComponent } from '../components/search-box/search-box.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -42,7 +44,8 @@ import { SearchBoxComponent } from '../components/search-box/search-box.componen
     ProductDetailComponent,
     ShoppingGridComponent,
     ProductCategoryMenuComponent,
+    NgbModule,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NgbModule],
 })
 export class SharedModule {}

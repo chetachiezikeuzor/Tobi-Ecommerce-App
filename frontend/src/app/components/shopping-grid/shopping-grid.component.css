@@ -77,6 +77,49 @@ h5.product-heading {
   padding: 24px 2em;
   margin-bottom: 26px;
 }
+.footer-pagination {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 12rem;
+  align-items: center;
+}
+select.quantity-select {
+  color: #212806;
+  border-radius: 2em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  padding: 0.6em 2.18em 0.6em 0.6em;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"%3E%3Cpath d="M213.7 101.7l-80 80a8.2 8.2 0 0 1-11.4 0l-80-80a8.4 8.4 0 0 1-1.7-8.8A8 8 0 0 1 48 88h160a8 8 0 0 1 7.4 4.9a8.4 8.4 0 0 1-1.7 8.8z" fill="currentColor"%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: right 4px center, right bottom, right bottom,
+    right bottom;
+  border-color: #dee2e6;
+}
+ngb-pagination ::ng-deep ul {
+  margin-bottom: 0 !important;
+}
+ngb-pagination ::ng-deep ul li a.page-link {
+  padding: 0.6em 1.5em 0.6em;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 40px !important;
+}
+ngb-pagination ::ng-deep a.page-link {
+  color: var(--granite);
+}
+ngb-pagination ::ng-deep .page-item.active a.page-link {
+  background-color: var(--granite);
+  border-color: var(--granite);
+  color: var(--alfalfa);
+}
+
 @media screen and (max-width: 991px) {
   .product-grid-twos.sidebar.dynamic-items {
     grid-template-columns: 1fr;
