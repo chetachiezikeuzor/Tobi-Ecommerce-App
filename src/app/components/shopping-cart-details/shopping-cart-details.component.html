@@ -19,7 +19,10 @@
         </div>
       </div>
       <div class="ecommerce-cart-form-wrapper cart-form-wrapper">
-        <form class="ecommerce-cart-form cart-default-state">
+        <form
+          *ngIf="cartItems?.length! > 0"
+          class="ecommerce-cart-form cart-default-state"
+        >
           <div id="target" class="ecommerce-cart-list cart-list">
             <div
               class="ecommerce-cart-item cart-item"
@@ -45,7 +48,7 @@
                       <div
                         class="value-button"
                         id="decrease"
-                        (click)="decreaseValue(tempCartItem)"
+                        (click)="decrementQuantity(tempCartItem)"
                         value="Decrease Value"
                       >
                         -
@@ -59,16 +62,20 @@
                       <div
                         class="value-button"
                         id="increase"
-                        (click)="increaseValue(tempCartItem)"
+                        (click)="incrementQuantity(tempCartItem)"
                         value="Increase Value"
                       >
                         +
                       </div>
                     </div>
 
-                    <a routerLink="/" class="inline-link margin-left-0-5"
-                      ><div>Remove</div></a
+                    <button
+                      (click)="remove(tempCartItem)"
+                      class="button inline-block"
+                      style="padding: 0.4em 0.6em 0.4em"
                     >
+                      <div class="button-text">Remove</div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -86,7 +93,14 @@
           </div>
           <div class="ecommerce-cart-footer cart-footer">
             <div class="ecommerce-cart-line-item cart-line-item">
-              <div class="feature-paragraph">Total</div>
+              <div class="feature-paragraph">Qty:</div>
+              <div class="ecommerce-cart-order-value cart-price">
+                {{ totalQuantity }}
+              </div>
+            </div>
+
+            <div class="ecommerce-cart-line-item cart-line-item">
+              <div class="feature-paragraph">Total:</div>
               <div class="ecommerce-cart-order-value cart-price">
                 {{ totalPrice | currency: "USD" }}
               </div>
@@ -107,6 +121,24 @@
             </div>
           </div>
         </form>
+        <div
+          *ngIf="cartItems?.length! == 0"
+          class="alert"
+          style="
+            display: block;
+            width: 84%;
+            margin: 0 auto;
+            font-size: 1.23em;
+            border: 1px solid #cdc3918c;
+            background-color: #cdc3913a;
+            padding: 20px 40px;
+            margin-top: 4rem;
+            color: #cdc391;
+            line-height: 32px;
+          "
+        >
+          Your shopping cart is empty.
+        </div>
       </div>
     </div>
   </div>

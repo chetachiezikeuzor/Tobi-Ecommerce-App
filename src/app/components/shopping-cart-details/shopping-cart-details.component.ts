@@ -15,7 +15,7 @@ export class ShoppingCartDetailsComponent implements OnInit {
 
   cartItems?: CartItem[] = [];
   totalPrice?: number;
-  totelQuantity?: number;
+  totalQuantity?: number;
 
   constructor(private cartService: CartService) {}
 
@@ -32,29 +32,19 @@ export class ShoppingCartDetailsComponent implements OnInit {
     this.cartItems = this.cartService.cartItems;
     this.cartService.totalPrice.subscribe((data) => (this.totalPrice = data));
     this.cartService.totalQuantity.subscribe(
-      (data) => (this.totelQuantity = data)
+      (data) => (this.totalQuantity = data)
     );
     this.cartService.computeCartTotals();
   }
 
-  increaseValue(theCartItem: CartItem) {
-    let foundItem = this.cartService.cartItems.find(
-      (tempCartItem) => tempCartItem.id === theCartItem.id
-    );
-    //@ts-ignore
-    foundItem?.quantity = foundItem?.quantity! + 1;
-    this.cartService.computeCartTotals();
+  incrementQuantity(theCartItem: CartItem) {
+    this.cartService.addToCart(theCartItem);
   }
 
-  decreaseValue(theCartItem: CartItem) {
-    let foundItem = this.cartService.cartItems.find(
-      (tempCartItem) => tempCartItem.id === theCartItem.id
-    );
-    //@ts-ignore
-    if (foundItem?.quantity > 1) {
-      //@ts-ignore
-      foundItem?.quantity = foundItem?.quantity! - 1;
-    }
-    this.cartService.computeCartTotals();
+  decrementQuantity(theCartItem: CartItem) {
+    this.cartService.decrementQuantity(theCartItem);
+  }
+  remove(theCartItem: CartItem) {
+    this.cartService.remove(theCartItem);
   }
 }
