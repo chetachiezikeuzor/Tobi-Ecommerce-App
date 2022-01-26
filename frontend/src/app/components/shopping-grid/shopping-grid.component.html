@@ -27,7 +27,9 @@
                     style="text-align: center"
                     *ngFor="let tempProduct of products"
                   >
-                    <a href="/" class="product-link inline-block"
+                    <a
+                      routerLink="/products/{{ tempProduct.id }}"
+                      class="product-link inline-block"
                       ><div class="product-link-image-wrapper">
                         <img
                           src="{{ tempProduct?.imageUrl }}"
