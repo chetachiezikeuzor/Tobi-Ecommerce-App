@@ -27,12 +27,30 @@ export class CartService {
     }
 
     if (alreadyExistsInCart) {
-      let itemExisting = existingCartItem?.quantity!;
-      if (itemExisting) itemExisting++;
+      //@ts-ignore
+      existingCartItem.quantity++;
     } else {
       this.cartItems.push(theCartItem);
     }
 
+    this.computeCartTotals();
+  }
+
+  decrementQuantity(theCartItem: CartItem) {
+    theCartItem.quantity!--;
+    if (theCartItem.quantity! === 0) {
+      this.remove(theCartItem);
+    } else {
+      this.computeCartTotals();
+    }
+  }
+  remove(theCartItem: CartItem) {
+    const itemIndex = this.cartItems?.findIndex(
+      (tempCartItem) => tempCartItem.id == theCartItem.id
+    );
+    if (itemIndex! > -1) {
+      this.cartItems?.splice(itemIndex!, 1);
+    }
     this.computeCartTotals();
   }
 
