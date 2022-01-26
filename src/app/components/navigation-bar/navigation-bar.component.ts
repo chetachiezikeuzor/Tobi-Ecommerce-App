@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,14 +11,25 @@ export class NavigationBarComponent implements OnInit {
   showCart?: boolean;
   @Output() showCartChange: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {}
+  totalPrice: number = 0.0;
+  totalQuantity: number = 0;
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit(): void {
+    this.updateCartStatus();
+  }
 
   cartDisplayStatus(status: boolean) {
     this.showCart = status;
     this.showCartChange.emit(status);
-    console.log('open');
-    console.log(this.showCart);
   }
 
-  ngOnInit(): void {}
+  updateCartStatus() {
+    this.cartService.totalPrice.subscribe((data) => (this.totalPrice = data));
+
+    this.cartService.totalQuantity.subscribe(
+      (data) => (this.totalQuantity = data)
+    );
+  }
 }
