@@ -37,34 +37,69 @@
                   <p class="cart-item-details">
                     {{ tempCartItem?.description }}
                   </p>
+                  <div style="margin-bottom: 12px">
+                    {{ tempCartItem?.unitPrice | currency: "USD" }}
+                  </div>
                   <div class="cart-quantity-wrapper">
-                    <select default-value="1" class="quantity-select">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </select>
+                    <div>
+                      <div
+                        class="value-button"
+                        id="decrease"
+                        (click)="decreaseValue(tempCartItem)"
+                        value="Decrease Value"
+                      >
+                        -
+                      </div>
+                      <input
+                        disabled
+                        type="number"
+                        id="number"
+                        value="{{ tempCartItem.quantity! }}"
+                      />
+                      <div
+                        class="value-button"
+                        id="increase"
+                        (click)="increaseValue(tempCartItem)"
+                        value="Increase Value"
+                      >
+                        +
+                      </div>
+                    </div>
+
                     <a routerLink="/" class="inline-link margin-left-0-5"
                       ><div>Remove</div></a
                     >
                   </div>
                 </div>
               </div>
-              <div class="product-price">
-                {{ tempCartItem?.unitPrice | currency: "USD" }}
+              <div>
+                <div class="">Qty: {{ tempCartItem?.quantity }}</div>
+                <div class="">
+                  Sub:
+                  {{
+                    tempCartItem.quantity! * tempCartItem.unitPrice!
+                      | currency: "USD"
+                  }}
+                </div>
               </div>
             </div>
           </div>
           <div class="ecommerce-cart-footer cart-footer">
             <div class="ecommerce-cart-line-item cart-line-item">
-              <div class="feature-paragraph">Subtotal</div>
+              <div class="feature-paragraph">Total</div>
               <div class="ecommerce-cart-order-value cart-price">
                 {{ totalPrice | currency: "USD" }}
               </div>
             </div>
-            <div class="margin-top-1">
-              <div class="button-wrapper">
-                <a href="/checkout" class="button inline-block"
+            <div>
+              <div
+                class="button-wrapper"
+                style="padding-top: 1.5em; padding-bottom: 1.5em"
+              >
+                <a
+                  routerLink="/checkout"
+                  class="button inline-block"
+                  (click)="cartDisplayStatus(false)"
                   ><div class="button-text">Continue to Checkout</div>
                   <i class="ph ph-arrow-right-bold"></i>
                 </a>

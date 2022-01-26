@@ -15,6 +15,7 @@ export class ShoppingCartDetailsComponent implements OnInit {
 
   cartItems?: CartItem[] = [];
   totalPrice?: number;
+  totelQuantity?: number;
 
   constructor(private cartService: CartService) {}
 
@@ -24,9 +25,36 @@ export class ShoppingCartDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.listCartDetails();
+  }
+
+  listCartDetails() {
     this.cartItems = this.cartService.cartItems;
     this.cartService.totalPrice.subscribe((data) => (this.totalPrice = data));
-    console.log(this.cartService.totalPrice);
-    console.log(this.cartService.cartItems);
+    this.cartService.totalQuantity.subscribe(
+      (data) => (this.totelQuantity = data)
+    );
+    this.cartService.computeCartTotals();
+  }
+
+  increaseValue(theCartItem: CartItem) {
+    let foundItem = this.cartService.cartItems.find(
+      (tempCartItem) => tempCartItem.id === theCartItem.id
+    );
+    //@ts-ignore
+    foundItem?.quantity = foundItem?.quantity! + 1;
+    this.cartService.computeCartTotals();
+  }
+
+  decreaseValue(theCartItem: CartItem) {
+    let foundItem = this.cartService.cartItems.find(
+      (tempCartItem) => tempCartItem.id === theCartItem.id
+    );
+    //@ts-ignore
+    if (foundItem?.quantity > 1) {
+      //@ts-ignore
+      foundItem?.quantity = foundItem?.quantity! - 1;
+    }
+    this.cartService.computeCartTotals();
   }
 }
