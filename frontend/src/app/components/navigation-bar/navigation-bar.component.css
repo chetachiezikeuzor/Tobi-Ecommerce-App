@@ -97,7 +97,6 @@
 .ecommerce-cart-open-link {
   border-radius: 0;
   border-width: 0;
-  color: var(--deep-shadow);
   cursor: pointer;
   padding: 9px 15px;
   text-decoration: none;
@@ -111,10 +110,34 @@
   padding-left: 0.5em;
   border-radius: 0;
   background-color: transparent;
-  color: #212806;
   font-size: 1em;
   line-height: 1.5;
   font-weight: 400;
+}
+.cart-amount {
+  background-color: var(--alfalfa);
+  color: #212806;
+}
+.cart-amount {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+.item-count {
+  color: var(--alfalfa);
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  border-left-color: var(--deep-shadow);
+  border-left: 1px solid;
+  background-color: var(--deep-shadow);
+}
+.cart-amount,
+.item-count {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  padding: 0.9em;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
 }
 .ecommerce-cart-open-link-count {
   display: inline-block;
@@ -125,7 +148,6 @@
   padding-left: 6px;
   border-radius: 999px;
   color: #fff;
-  background-color: var(--deep-shadow);
   font-size: 11px;
   line-height: 24px;
   font-weight: 700;

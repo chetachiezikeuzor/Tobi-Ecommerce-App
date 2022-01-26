@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { SharedModule } from './shared-module/shared.module';
 
 import { AppComponent } from './app.component';

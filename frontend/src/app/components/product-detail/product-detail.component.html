@@ -1,11 +1,11 @@
 <section class="section margin-top-9-5" style="padding-top: 6.5em">
   <div class="container no-padding-mobile">
     <div class="inner-spacing">
-      <div class="breadcrumbs-wrapper">
-        <a href="/products" class="breadcrumb-link">go back</a>
-      </div>
       <div class="product-description-wrapper">
         <div class="product-description-images-wrapper">
+          <div class="breadcrumbs-wrapper" style="margin: 0 auto">
+            <a routerLink="/products" class="breadcrumb-link">go back</a>
+          </div>
           <img
             src="{{ product?.imageUrl }}"
             loading="lazy"
@@ -29,7 +29,10 @@
             </div>
           </div>
         </div>
-        <div class="product-description-content-wrapper">
+        <div
+          class="product-description-content-wrapper"
+          style="padding-top: 2rem"
+        >
           <div>
             <h3>{{ product?.name }}</h3>
             <div class="product-price-wrapper">
@@ -62,10 +65,14 @@
           </div>
           <div>
             <div class="button-wrapper">
-              <a href="/" class="button inline-block"
-                ><div class="button-text">Add to Cart</div>
+              <button
+                (click)="addToCart()"
+                class="button inline-block"
+                style="text-align: center; justify-content: center"
+              >
+                <div class="button-text">Add to Cart</div>
                 <i class="ph ph-arrow-right-bold"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 <div style="opacity: 1" class="wrapper-sticky">
   <div data-animation="over-left" class="navigation tobi-navigation">
     <div class="nav-container">
-      <a href="/" class="nav-link" style="text-decoration: none"
+      <a routerLink="/" class="nav-link" style="text-decoration: none"
         ><h4
           style="
             font-style: italic;
@@ -17,7 +17,9 @@
       <nav role="navigation" class="nav-menu tobi-navigation-menu">
         <ul class="navigation-wrapper">
           <li class="nav-link">
-            <a href="/shop" style="color: var(--granite); text-decoration: none"
+            <a
+              routerLink="/shop"
+              style="color: var(--granite); text-decoration: none"
               >Shop</a
             >
           </li>
@@ -29,7 +31,10 @@
           (click)="cartDisplayStatus(true)"
         >
           <i class="ph ph-shopping-cart-bold" style="font-size: 18px"></i>
-          <div class="ecommerce-cart-open-link-count cart-quantity">0</div>
+          <div class="ecommerce-cart-open-link-count cart-quantity">
+            <span class="cart-amount"> {{ totalPrice | currency: "USD" }}</span>
+            <span class="item-count">{{ totalQuantity }}</span>
+          </div>
         </button>
       </div>
     </div>
