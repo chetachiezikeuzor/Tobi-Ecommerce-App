@@ -38,11 +38,15 @@ export class ProductService {
       .pipe(map((response) => response._embedded.productCategories));
   }
 
-  getProductCategoryById(theCategoryId: number): Observable<ProductCategory[]> {
+  getProductCategoryById(theCategoryId: number): Observable<ProductCategory> {
     console.log(`${this.categoryUrl}/${theCategoryId}`);
-    return this.httpClient
-      .get<GetResponseProductCategory>(`${this.categoryUrl}/${theCategoryId}`)
-      .pipe(map((response) => response._embedded.productCategories));
+    const categoryUrl = `${this.categoryUrl}/${theCategoryId}`;
+    return this.httpClient.get<ProductCategory>(categoryUrl);
+  }
+
+  getProductById(theProductId: number): Observable<Product> {
+    const productUrl = `${this.baseUrl}/${theProductId}`;
+    return this.httpClient.get<Product>(productUrl);
   }
 }
 
