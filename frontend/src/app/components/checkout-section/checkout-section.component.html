@@ -154,7 +154,7 @@
                       >Country *</label
                     ><select
                       formControlName="country"
-                      (change)="getStates('shippingAddress')"
+                      (change)="getStates('billingAddress')"
                       class="ecommerce-checkout-shipping-country-selector checkout-input"
                     >
                       <option
@@ -173,7 +173,7 @@
                       class="ecommerce-checkout-shipping-country-selector checkout-input"
                     >
                       <option
-                        *ngFor="let state of shippingAddressStates"
+                        *ngFor="let state of billingAddressStates"
                         [ngValue]="state"
                       >
                         {{ state.name }}
