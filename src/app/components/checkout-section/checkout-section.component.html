@@ -3,23 +3,52 @@
     <div class="inner-spacing">
       <div class="product-description-wrapper">
         <div class="product-description-images-wrapper">
-          <div class="ecommerce-checkout-layout-main checkout-column-left">
-            <form class="ecommerce-checkout-customer-info-wrapper">
+          <form
+            (ngSubmit)="onSubmit()"
+            [formGroup]="checkoutFormGroup"
+            class="ecommerce-checkout-layout-main checkout-column-left"
+          >
+            <!--customer form group-->
+            <div
+              formGroupName="customer"
+              class="ecommerce-checkout-customer-info-wrapper"
+            >
               <div class="ecommerce-checkout-block-header block-header">
                 <h4>Customer Information</h4>
               </div>
               <fieldset class="ecommerce-checkout-block-content block-content">
                 <label class="ecommerce-checkout-label checkout-label"
-                  >Email *</label
+                  >First Name *</label
                 ><input
+                  formControlName="firstName"
                   type="text"
-                  name="email"
                   class="ecommerce-checkout-email-input checkout-input"
-                  value=""
                 />
               </fieldset>
-            </form>
-            <form class="ecommerce-checkout-shipping-address-wrapper">
+              <fieldset class="ecommerce-checkout-block-content block-content">
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Last Name *</label
+                ><input
+                  formControlName="lastName"
+                  type="text"
+                  class="ecommerce-checkout-email-input checkout-input"
+                />
+              </fieldset>
+              <fieldset class="ecommerce-checkout-block-content block-content">
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Email Address *</label
+                ><input
+                  formControlName="email"
+                  type="text"
+                  class="ecommerce-checkout-email-input checkout-input"
+                />
+              </fieldset>
+            </div>
+            <!--shipping form group-->
+            <div
+              formGroupName="shipping"
+              class="ecommerce-checkout-shipping-address-wrapper"
+            >
               <div class="ecommerce-checkout-block-header block-header">
                 <h4>Shipping Address</h4>
               </div>
@@ -89,8 +118,87 @@
                   <option selected="" value="US">United States</option>
                 </select>
               </fieldset>
-            </form>
-            <div class="ecommerce-checkout-payment-info-wrapper">
+            </div>
+            <!--billing form group-->
+            <div
+              formGroupName="billing"
+              class="ecommerce-checkout-shipping-address-wrapper"
+            >
+              <div class="ecommerce-checkout-block-header block-header">
+                <h4>Billing Address</h4>
+              </div>
+              <fieldset class="ecommerce-checkout-block-content block-content">
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Full Name *</label
+                ><input
+                  type="text"
+                  name="name"
+                  class="ecommerce-checkout-shipping-full-name checkout-input"
+                  value=""
+                /><label class="ecommerce-checkout-label checkout-label"
+                  >Street Address *</label
+                ><input
+                  type="text"
+                  name="address_line1"
+                  class="ecommerce-checkout-shipping-street-address checkout-input"
+                  value=""
+                /><label class="ecommerce-checkout-label checkout-label"
+                  >Street Address 2 (optional)</label
+                ><input
+                  type="text"
+                  name="address_line2"
+                  class="ecommerce-checkout-shipping-street-address-optional checkout-input"
+                  value=""
+                />
+                <div class="ecommerce-checkout-row">
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >City *</label
+                    ><input
+                      type="text"
+                      name="address_city"
+                      class="ecommerce-checkout-shipping-city checkout-input"
+                      value=""
+                    />
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >State/Province</label
+                    ><input
+                      type="text"
+                      name="address_state"
+                      class="ecommerce-checkout-shipping-state-province checkout-input"
+                      value=""
+                    />
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >Zip/Postal Code *</label
+                    ><input
+                      type="text"
+                      name="address_zip"
+                      class="ecommerce-checkout-shipping-zip-postal-code checkout-input"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <label class="ecommerce-checkout-label checkout-label"
+                  >Country *</label
+                ><select
+                  name="address_country"
+                  class="ecommerce-checkout-shipping-country-selector checkout-input"
+                  value="US"
+                >
+                  <option value="CA">Canada</option>
+                  <option selected="" value="US">United States</option>
+                </select>
+              </fieldset>
+            </div>
+            <!--payment form group-->
+            <div
+              formGroupName="payment"
+              class="ecommerce-checkout-payment-info-wrapper"
+            >
               <div class="ecommerce-checkout-block-header block-header">
                 <h4>Payment Info</h4>
                 <img
@@ -144,7 +252,7 @@
                 </div>
               </fieldset>
             </div>
-          </div>
+          </form>
         </div>
         <div class="product-description-content-wrapper">
           <div
@@ -221,10 +329,10 @@
               </div>
               <div class="padding-lr-1">
                 <div class="button-wrapper">
-                  <a routerLink="/" class="button outline inline-block"
-                    ><div class="button-text">Complete Purchase</div>
+                  <button routerLink="/" class="button outline inline-block">
+                    <div class="button-text">Complete Purchase</div>
                     <i class="ph ph-arrow-right-bold"></i>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

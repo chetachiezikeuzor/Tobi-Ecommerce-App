@@ -7,7 +7,6 @@ import { Subject } from 'rxjs';
 })
 export class CartService {
   cartItems: CartItem[] = [];
-
   totalPrice: Subject<number> = new Subject<number>();
   totalQuantity: Subject<number> = new Subject<number>();
 
@@ -15,7 +14,6 @@ export class CartService {
 
   addToCart(theCartItem: CartItem) {
     let alreadyExistsInCart: boolean = false;
-
     let existingCartItem: CartItem | undefined = undefined;
 
     if (this.cartItems.length > 0) {
@@ -44,6 +42,7 @@ export class CartService {
       this.computeCartTotals();
     }
   }
+
   remove(theCartItem: CartItem) {
     const itemIndex = this.cartItems?.findIndex(
       (tempCartItem) => tempCartItem.id == theCartItem.id
@@ -71,7 +70,7 @@ export class CartService {
   }
 
   logCartData(totalPriceValue: number, totalQuantityValue: number) {
-    console.log('Contents of the cart');
+    console.log('Contents of the cart:');
     for (let tempCartItem of this.cartItems) {
       const subTotalPrice = tempCartItem.quantity! * tempCartItem.unitPrice!;
       console.log(
