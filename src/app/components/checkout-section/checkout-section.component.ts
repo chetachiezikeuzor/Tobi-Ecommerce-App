@@ -80,6 +80,7 @@ export class CheckoutSectionComponent implements OnInit {
   getStates(formGroupName: string) {
     const formGroup = this.checkoutFormGroup.get(formGroupName);
     const countryCode = formGroup?.value.country.code;
+    const countryName = formGroup?.value.country.name;
 
     this.shopFormService.getStates(countryCode).subscribe((data) => {
       if (formGroupName === 'shippingAddress') {
@@ -98,9 +99,12 @@ export class CheckoutSectionComponent implements OnInit {
       this.checkoutFormGroup.controls.billingAddress
         //@ts-ignore
         .setValue(this.checkoutFormGroup.controls.shippingAddress.value);
+
+      this.billingAddressStates = this.shippingAddressStates;
     } else {
       //@ts-ignore
       this.checkoutFormGroup.controls.billingAddress.reset();
+      this.billingAddressStates = [];
     }
   }
 
