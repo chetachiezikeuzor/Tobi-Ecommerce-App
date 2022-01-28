@@ -190,28 +190,58 @@
               </div>
               <fieldset class="ecommerce-checkout-block-content block-content">
                 <label class="ecommerce-checkout-label checkout-label"
+                  >Name on Card *</label
+                ><input
+                  type="text"
+                  formControlName="nameOnCard"
+                  class="ecommerce-checkout-shipping-street-address-optional checkout-input"
+                />
+                <label class="ecommerce-checkout-label checkout-label"
                   >Card Number *</label
                 ><input
                   type="text"
-                  name="card_number"
+                  formControlName="cardNumber"
                   class="ecommerce-checkout-shipping-street-address-optional checkout-input"
                 />
                 <div class="ecommerce-checkout-row">
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
-                      >Expiration Date *</label
+                      >Security Code *</label
                     ><input
                       type="text"
-                      name="card_expiration_date"
+                      formControlName="securityCode"
                       class="ecommerce-checkout-shipping-street-address-optional checkout-input"
                     />
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
-                      >Security Code *</label
+                      >Card Type *</label
+                    ><select
+                      formControlName="cardType"
+                      class="ecommerce-checkout-shipping-country-selector checkout-input"
+                      value="US"
+                    >
+                      <option value="CA">Canada</option>
+                      <option selected="" value="US">United States</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="ecommerce-checkout-row">
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >Expiration Month *</label
                     ><input
                       type="text"
-                      name="card_security_code"
+                      formControlName="cardNumber"
+                      class="ecommerce-checkout-shipping-street-address-optional checkout-input"
+                    />
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >Expiration Year *</label
+                    ><input
+                      type="text"
+                      formControlName="cardNumber"
                       class="ecommerce-checkout-shipping-street-address-optional checkout-input"
                     />
                   </div>
@@ -282,14 +312,18 @@
                   class="ecommerce-checkout-block-content block-content"
                 >
                   <div class="ecommerce-checkout-summary-line-item line-item">
-                    <div class="small-text">Subtotal</div>
-                    <div class="product-price">$&nbsp;29.00&nbsp;</div>
+                    <div class="small-text">Quantity:</div>
+                    <div class="product-price">{{ totalQuantity }} items</div>
                   </div>
-
-                  <div class="divider-line full-width"></div>
                   <div class="ecommerce-checkout-summary-line-item line-item">
-                    <div class="feature-paragraph">Total</div>
-                    <div class="cart-price">$&nbsp;29.00&nbsp;</div>
+                    <div class="small-text">Shipping:</div>
+                    <div class="product-price">FREE</div>
+                  </div>
+                  <div class="ecommerce-checkout-summary-line-item line-item">
+                    <div class="small-text">Total:</div>
+                    <div class="product-price">
+                      {{ totalQuantity | currency: "USD" }}
+                    </div>
                   </div>
                 </fieldset>
               </div>
