@@ -58,7 +58,7 @@ select.quantity-select {
 .ecommerce-cart-header {
   position: relative;
   display: flex;
-  padding: 16px 24px;
+  padding: 5px 24px;
   -webkit-box-pack: justify;
   justify-content: space-between;
   -webkit-box-flex: 0;
@@ -230,7 +230,7 @@ img {
 }
 .ecommerce-cart-list {
   overflow: auto;
-  padding: 12px 24px;
+  padding: 0px 24px;
   -webkit-box-flex: 1;
   flex-grow: 1;
   flex-shrink: 1;
@@ -244,6 +244,9 @@ img {
   -webkit-box-align: stretch;
   align-items: stretch;
   border-bottom: 1px solid rgba(142, 147, 115, 0.2);
+}
+.cart-item:last-of-type {
+  border-bottom: none;
 }
 .ecommerce-cart-item {
   display: flex;

@@ -35,7 +35,6 @@ export class ShoppingPageComponent implements OnInit {
       .getProductList(this.currentCategoryId)
       .subscribe((data) => {
         this.products = data;
-        console.log(data);
       });
   }
 }

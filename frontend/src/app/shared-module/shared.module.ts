@@ -15,6 +15,7 @@ import { ProductDetailComponent } from '../components/product-detail/product-det
 import { SearchBoxComponent } from '../components/search-box/search-box.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProductDetailComponent,
     ShoppingGridComponent,
     ProductCategoryMenuComponent,
+    ReactiveFormsModule,
     NgbModule,
   ],
-  imports: [CommonModule, RouterModule, NgbModule],
+  imports: [CommonModule, RouterModule, NgbModule, ReactiveFormsModule],
 })
 export class SharedModule {}
