@@ -18,24 +18,47 @@ export class CheckoutSectionComponent implements OnInit {
         lastName: [''],
         email: [''],
       }),
-      shipping: this.formBuilder.group({
-        firstName: [''],
-        lastName: [''],
-        email: [''],
+      shippingAddress: this.formBuilder.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        country: [''],
+        zipCode: [''],
       }),
-      billing: this.formBuilder.group({
-        firstName: [''],
-        lastName: [''],
-        email: [''],
+      billingAddress: this.formBuilder.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        country: [''],
+        zipCode: [''],
       }),
-      payment: this.formBuilder.group({
-        firstName: [''],
-        lastName: [''],
-        email: [''],
+      creditCard: this.formBuilder.group({
+        cardType: [''],
+        nameOnCard: [''],
+        cardNumber: [''],
+        securityCode: [''],
+        expirationMonth: [''],
+        expirationYear: [''],
       }),
     });
   }
+
+  copyShippingAddressToBillingAddress(event: Event) {
+    let select = event.target as HTMLInputElement;
+    if (select.checked) {
+      //@ts-ignore
+      this.checkoutFormGroup.controls.billingAddress
+        //@ts-ignore
+        .setValue(this.checkoutFormGroup.controls.shippingAddress.value);
+    } else {
+      //@ts-ignore
+      this.checkoutFormGroup.controls.billingAddress.reset();
+    }
+  }
+
   onSubmit() {
     console.log(this.checkoutFormGroup.get('customer')!.value);
+    console.log(this.checkoutFormGroup.get('shippingAddress')!.value);
+    console.log(this.checkoutFormGroup.get('billingAddress')!.value);
   }
 }
