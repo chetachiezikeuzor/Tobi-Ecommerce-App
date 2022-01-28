@@ -67,6 +67,39 @@
                 <div class="ecommerce-checkout-row">
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
+                      >Country *</label
+                    ><select
+                      formControlName="country"
+                      (change)="getStates('shippingAddress')"
+                      class="ecommerce-checkout-shipping-country-selector checkout-input"
+                    >
+                      <option
+                        *ngFor="let country of countries"
+                        [ngValue]="country"
+                      >
+                        {{ country.name }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >State/Province</label
+                    ><select
+                      formGroupName="state"
+                      class="ecommerce-checkout-shipping-country-selector checkout-input"
+                    >
+                      <option
+                        *ngFor="let state of shippingAddressStates"
+                        [ngValue]="state"
+                      >
+                        {{ state.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="ecommerce-checkout-row">
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
                       >City *</label
                     ><input
                       type="text"
@@ -76,33 +109,14 @@
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
-                      >State/Province</label
-                    ><input
-                      type="text"
-                      formControlName="state"
-                      class="ecommerce-checkout-shipping-state-province checkout-input"
-                    />
-                  </div>
-                  <div class="ecommerce-checkout-column">
-                    <label class="ecommerce-checkout-label checkout-label"
                       >Zip/Postal Code *</label
                     ><input
                       type="text"
                       formControlName="zipCode"
-                      class="ecommerce-checkout-shipping-zip-postal-code checkout-input"
+                      class="ecommerce-checkout-shipping-state-province checkout-input"
                     />
                   </div>
                 </div>
-                <label class="ecommerce-checkout-label checkout-label"
-                  >Country *</label
-                ><select
-                  formGroupName="country"
-                  class="ecommerce-checkout-shipping-country-selector checkout-input"
-                  value="US"
-                >
-                  <option value="CA">Canada</option>
-                  <option selected="" value="US">United States</option>
-                </select>
               </fieldset>
             </div>
             <!--checkbox-->
@@ -137,6 +151,39 @@
                 <div class="ecommerce-checkout-row">
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
+                      >Country *</label
+                    ><select
+                      formControlName="country"
+                      (change)="getStates('shippingAddress')"
+                      class="ecommerce-checkout-shipping-country-selector checkout-input"
+                    >
+                      <option
+                        *ngFor="let country of countries"
+                        [ngValue]="country"
+                      >
+                        {{ country.name }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
+                      >State/Province</label
+                    ><select
+                      formGroupName="state"
+                      class="ecommerce-checkout-shipping-country-selector checkout-input"
+                    >
+                      <option
+                        *ngFor="let state of shippingAddressStates"
+                        [ngValue]="state"
+                      >
+                        {{ state.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="ecommerce-checkout-row">
+                  <div class="ecommerce-checkout-column">
+                    <label class="ecommerce-checkout-label checkout-label"
                       >City *</label
                     ><input
                       type="text"
@@ -146,33 +193,14 @@
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
-                      >State/Province</label
-                    ><input
-                      type="text"
-                      formControlName="state"
-                      class="ecommerce-checkout-shipping-state-province checkout-input"
-                    />
-                  </div>
-                  <div class="ecommerce-checkout-column">
-                    <label class="ecommerce-checkout-label checkout-label"
                       >Zip/Postal Code *</label
                     ><input
                       type="text"
                       formControlName="zipCode"
-                      class="ecommerce-checkout-shipping-zip-postal-code checkout-input"
+                      class="ecommerce-checkout-shipping-state-province checkout-input"
                     />
                   </div>
                 </div>
-                <label class="ecommerce-checkout-label checkout-label"
-                  >Country *</label
-                ><select
-                  formControlName="country"
-                  class="ecommerce-checkout-shipping-country-selector checkout-input"
-                  value="US"
-                >
-                  <option value="CA">Canada</option>
-                  <option selected="" value="US">United States</option>
-                </select>
               </fieldset>
             </div>
             <!--payment form group-->
@@ -230,20 +258,26 @@
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
                       >Expiration Month *</label
-                    ><input
-                      type="text"
-                      formControlName="cardNumber"
-                      class="ecommerce-checkout-shipping-street-address-optional checkout-input"
-                    />
+                    ><select
+                      formGroupName="expirationMonth"
+                      class="ecommerce-checkout-shipping-country-selector checkout-input"
+                    >
+                      <option *ngFor="let month of creditCardMonths">
+                        {{ month }}
+                      </option>
+                    </select>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
                       >Expiration Year *</label
-                    ><input
-                      type="text"
-                      formControlName="cardNumber"
-                      class="ecommerce-checkout-shipping-street-address-optional checkout-input"
-                    />
+                    ><select
+                      formGroupName="expirationMonth"
+                      class="ecommerce-checkout-shipping-country-selector checkout-input"
+                    >
+                      <option *ngFor="let year of creditCardYears">
+                        {{ year }}
+                      </option>
+                    </select>
                   </div>
                 </div>
               </fieldset>
