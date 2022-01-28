@@ -18,7 +18,6 @@ export class CategoriesSectionComponent implements OnInit {
   listCategories() {
     this.productService.getProductCategories().subscribe((data) => {
       this.categories = data;
-      console.log(data);
     });
   }
 }

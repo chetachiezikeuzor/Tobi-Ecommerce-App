@@ -37,7 +37,6 @@ export class ShoppingGridComponent implements OnInit {
   updatePageSize(e: Event) {
     const pageSize = e.target as HTMLSelectElement;
     this.thePageSize = pageSize.value as unknown as number;
-    console.log(this.thePageSize);
     this.thePageNumber = 1;
     this.listProducts();
   }
@@ -61,9 +60,6 @@ export class ShoppingGridComponent implements OnInit {
     }
 
     this.previousKeyword = theKeyword;
-
-    console.log(`keyword=${theKeyword}, thePageNumber=${this.thePageNumber}`);
-
     this.productService
       .searchProductsPaginate(
         this.thePageNumber - 1,
@@ -88,10 +84,6 @@ export class ShoppingGridComponent implements OnInit {
 
     this.previousCategoryId = this.currentCategoryId;
 
-    console.log(
-      `c = ${this.currentCategoryId}   p = ${this.previousCategoryId}`
-    );
-
     this.productService
       .getProductListPaginate(
         this.thePageNumber - 1,
@@ -112,7 +104,6 @@ export class ShoppingGridComponent implements OnInit {
 
   addToCart(theProduct: Product) {
     console.log(`Adding to cart: ${theProduct.name}: $${theProduct.unitPrice}`);
-
     const theCartItem = new CartItem(theProduct);
 
     this.cartService.addToCart(theCartItem);
