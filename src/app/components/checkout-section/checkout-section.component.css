@@ -406,3 +406,13 @@ h4 {
   line-height: 140%;
   font-weight: 300;
 }
+.validation-msg {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #c941638c;
+  background-color: #d17c983a;
+  padding: 8px 4px;
+  color: #c75a7b;
+  text-align: center;
+}
