@@ -26,6 +26,20 @@
                       type="text"
                       class="ecommerce-checkout-shipping-city checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        firstName?.invalid &&
+                        (firstName?.dirty || firstName?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span *ngIf="firstName?.errors?.['required']">
+                        First name is required</span
+                      >
+                      <span *ngIf="firstName?.errors?.['minlength']">
+                        First name must be at least 2 characters long
+                      </span>
+                    </div>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -35,6 +49,20 @@
                       type="text"
                       class="ecommerce-checkout-shipping-state-province checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        lastName?.invalid &&
+                        (lastName?.dirty || lastName?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span *ngIf="lastName?.errors?.['required']">
+                        Last name is required</span
+                      >
+                      <span *ngIf="lastName?.errors?.['minlength']">
+                        Last name must be at least 2 characters long
+                      </span>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -46,6 +74,17 @@
                   type="text"
                   class="ecommerce-checkout-email-input checkout-input"
                 />
+                <div
+                  *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                  class="validation-msg"
+                >
+                  <span *ngIf="email?.errors?.['required']">
+                    Email is required</span
+                  >
+                  <span *ngIf="email?.errors?.['pattern']">
+                    Email must be a valid email address
+                  </span>
+                </div>
               </fieldset>
             </div>
             <!--shipping form group-->
@@ -323,18 +362,6 @@
                             <div class="small-text">1</div>
                           </div>
                         </div>
-                        <ul
-                          class="ecommerce-checkout-order-item-option-list cart-option-list"
-                        >
-                          <li class="cart-option">
-                            <span class="none">Quantity</span
-                            ><span>Single Card</span>
-                          </li>
-                          <li class="cart-option">
-                            <span class="none">Envelope Color</span
-                            ><span>White</span>
-                          </li>
-                        </ul>
                       </div>
                       <div class="product-price">$&nbsp;4.00&nbsp;</div>
                     </div>
