@@ -1,4 +1,4 @@
-package com.tobi.ecommerce.config;
+package com.tobi.ecommerce.configurations;
 
 import com.tobi.ecommerce.models.Country;
 import com.tobi.ecommerce.models.Product;
@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.Set;
 
 @Configuration
-public class TobiDataRestConfig implements RepositoryRestConfigurer {
+public class TobiDataRestConfiguration implements RepositoryRestConfigurer {
 
     private EntityManager entityManager;
 
     @Autowired
-    public TobiDataRestConfig(EntityManager theEntityManager) {
+    public TobiDataRestConfiguration(EntityManager theEntityManager) {
         entityManager = theEntityManager;
     }
 
