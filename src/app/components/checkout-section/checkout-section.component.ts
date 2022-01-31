@@ -8,6 +8,7 @@ import {
 import { Country } from 'src/app/common/country';
 import { State } from 'src/app/common/state';
 import { ShopFormService } from 'src/app/services/shop-form.service';
+import { TobiShopValidators } from 'src/app/validators/tobi-shop-validators';
 
 @Component({
   selector: 'app-checkout-section',
@@ -39,10 +40,12 @@ export class CheckoutSectionComponent implements OnInit {
         firstName: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
+          TobiShopValidators.notOnlyWhitespace,
         ]),
         lastName: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
+          TobiShopValidators.notOnlyWhitespace,
         ]),
         email: new FormControl('', [
           Validators.required,

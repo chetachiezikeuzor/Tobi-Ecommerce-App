@@ -33,11 +33,15 @@
                       "
                       class="validation-msg"
                     >
-                      <span *ngIf="firstName?.errors?.['required']">
-                        First name is required</span
+                      <span
+                        *ngIf="firstName?.errors?.['required'] || firstName?.errors?.['notOnlyWhitespace']"
                       >
-                      <span *ngIf="firstName?.errors?.['minlength']">
-                        First name must be at least 2 characters long
+                        First name is required.</span
+                      >
+                      <span
+                        *ngIf="firstName?.errors?.['minlength']  || lastName?.errors?.['notOnlyWhitespace']"
+                      >
+                        First name must be at least 2 characters long.
                       </span>
                     </div>
                   </div>
@@ -57,10 +61,10 @@
                       class="validation-msg"
                     >
                       <span *ngIf="lastName?.errors?.['required']">
-                        Last name is required</span
+                        Last name is required.</span
                       >
                       <span *ngIf="lastName?.errors?.['minlength']">
-                        Last name must be at least 2 characters long
+                        Last name must be at least 2 characters long.
                       </span>
                     </div>
                   </div>
@@ -79,10 +83,10 @@
                   class="validation-msg"
                 >
                   <span *ngIf="email?.errors?.['required']">
-                    Email is required</span
+                    Email is required.</span
                   >
                   <span *ngIf="email?.errors?.['pattern']">
-                    Email must be a valid email address
+                    Email must be a valid email address.
                   </span>
                 </div>
               </fieldset>
