@@ -26,6 +26,24 @@
                       type="text"
                       class="ecommerce-checkout-shipping-city checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        firstName?.invalid &&
+                        (firstName?.dirty || firstName?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="firstName?.errors?.['required'] || firstName?.errors?.['notOnlyWhitespace']"
+                      >
+                        First name is required.</span
+                      >
+                      <span
+                        *ngIf="firstName?.errors?.['minlength']  || firstName?.errors?.['notOnlyWhitespace']"
+                      >
+                        First name must be at least 2 characters long.
+                      </span>
+                    </div>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -35,6 +53,24 @@
                       type="text"
                       class="ecommerce-checkout-shipping-state-province checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        lastName?.invalid &&
+                        (lastName?.dirty || lastName?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="lastName?.errors?.['required']  || lastName?.errors?.['notOnlyWhitespace']"
+                      >
+                        Last name is required.</span
+                      >
+                      <span
+                        *ngIf="lastName?.errors?.['minlength']  || lastName?.errors?.['notOnlyWhitespace']"
+                      >
+                        Last name must be at least 2 characters long.
+                      </span>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -46,6 +82,17 @@
                   type="text"
                   class="ecommerce-checkout-email-input checkout-input"
                 />
+                <div
+                  *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                  class="validation-msg"
+                >
+                  <span *ngIf="email?.errors?.['required']">
+                    Email is required.</span
+                  >
+                  <span *ngIf="email?.errors?.['pattern']">
+                    Email must be a valid email address.
+                  </span>
+                </div>
               </fieldset>
             </div>
             <!--shipping form group-->
@@ -64,6 +111,24 @@
                   formControlName="street"
                   class="ecommerce-checkout-shipping-street-address checkout-input"
                 />
+                <div
+                  *ngIf="
+                    shippingAddressStreet?.invalid &&
+                    (shippingAddressStreet?.dirty ||
+                      shippingAddressStreet?.touched)
+                  "
+                  class="validation-msg"
+                >
+                  <span
+                    *ngIf="shippingAddressStreet?.errors?.['required'] || shippingAddressStreet?.errors?.['notOnlyWhitespace']"
+                  >
+                    Street is required.</span
+                  ><span
+                    *ngIf="shippingAddressStreet?.errors?.['minlength']  || shippingAddressStreet?.errors?.['notOnlyWhitespace']"
+                  >
+                    Street must be at least 2 characters long.
+                  </span>
+                </div>
                 <div class="ecommerce-checkout-row">
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -80,6 +145,20 @@
                         {{ country.name }}
                       </option>
                     </select>
+                    <div
+                      *ngIf="
+                        shippingAddressCountry?.invalid &&
+                        (shippingAddressCountry?.dirty ||
+                          shippingAddressCountry?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="shippingAddressCountry?.errors?.['required'] || shippingAddressCountry?.errors?.['notOnlyWhitespace']"
+                      >
+                        Country is required.</span
+                      >
+                    </div>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -95,6 +174,20 @@
                         {{ state.name }}
                       </option>
                     </select>
+                    <div
+                      *ngIf="
+                        shippingAddressState?.invalid &&
+                        (shippingAddressState?.dirty ||
+                          shippingAddressState?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="shippingAddressState?.errors?.['required'] || shippingAddressState?.errors?.['notOnlyWhitespace']"
+                      >
+                        State is required.</span
+                      >
+                    </div>
                   </div>
                 </div>
                 <div class="ecommerce-checkout-row">
@@ -106,6 +199,24 @@
                       formControlName="city"
                       class="ecommerce-checkout-shipping-city checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        shippingAddressCity?.invalid &&
+                        (shippingAddressCity?.dirty ||
+                          shippingAddressCity?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="shippingAddressCity?.errors?.['required'] || shippingAddressCity?.errors?.['notOnlyWhitespace']"
+                      >
+                        City is required.</span
+                      ><span
+                        *ngIf="shippingAddressCity?.errors?.['minlength']  || shippingAddressCity?.errors?.['notOnlyWhitespace']"
+                      >
+                        City must be at least 2 characters long.
+                      </span>
+                    </div>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -115,6 +226,24 @@
                       formControlName="zipCode"
                       class="ecommerce-checkout-shipping-state-province checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        shippingAddressZipCode?.invalid &&
+                        (shippingAddressZipCode?.dirty ||
+                          shippingAddressZipCode?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="shippingAddressZipCode?.errors?.['required'] || shippingAddressZipCode?.errors?.['notOnlyWhitespace']"
+                      >
+                        Zip code is required.</span
+                      ><span
+                        *ngIf="shippingAddressZipCode?.errors?.['minlength']  || shippingAddressZipCode?.errors?.['notOnlyWhitespace']"
+                      >
+                        Zip code must be at least 2 characters long.
+                      </span>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -142,12 +271,30 @@
               </div>
               <fieldset class="ecommerce-checkout-block-content block-content">
                 <label class="ecommerce-checkout-label checkout-label"
-                  >Billing Address *</label
+                  >Street Address *</label
                 ><input
                   type="text"
                   formControlName="street"
                   class="ecommerce-checkout-shipping-street-address checkout-input"
                 />
+                <div
+                  *ngIf="
+                    billingAddressStreet?.invalid &&
+                    (billingAddressStreet?.dirty ||
+                      billingAddressStreet?.touched)
+                  "
+                  class="validation-msg"
+                >
+                  <span
+                    *ngIf="billingAddressStreet?.errors?.['required'] || billingAddressStreet?.errors?.['notOnlyWhitespace']"
+                  >
+                    Street is required.</span
+                  ><span
+                    *ngIf="billingAddressStreet?.errors?.['minlength']  || billingAddressStreet?.errors?.['notOnlyWhitespace']"
+                  >
+                    Street must be at least 2 characters long.
+                  </span>
+                </div>
                 <div class="ecommerce-checkout-row">
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -164,6 +311,20 @@
                         {{ country.name }}
                       </option>
                     </select>
+                    <div
+                      *ngIf="
+                        billingAddressCountry?.invalid &&
+                        (billingAddressCountry?.dirty ||
+                          billingAddressCountry?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="billingAddressCountry?.errors?.['required'] || billingAddressCountry?.errors?.['notOnlyWhitespace']"
+                      >
+                        Country is required.</span
+                      >
+                    </div>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -179,6 +340,20 @@
                         {{ state.name }}
                       </option>
                     </select>
+                    <div
+                      *ngIf="
+                        billingAddressState?.invalid &&
+                        (billingAddressState?.dirty ||
+                          billingAddressState?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="billingAddressState?.errors?.['required'] || billingAddressCountry?.errors?.['notOnlyWhitespace']"
+                      >
+                        State is required.</span
+                      >
+                    </div>
                   </div>
                 </div>
                 <div class="ecommerce-checkout-row">
@@ -190,6 +365,24 @@
                       formControlName="city"
                       class="ecommerce-checkout-shipping-city checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        billingAddressCity?.invalid &&
+                        (billingAddressCity?.dirty ||
+                          billingAddressCity?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="billingAddressCity?.errors?.['required'] || billingAddressCity?.errors?.['notOnlyWhitespace']"
+                      >
+                        City is required.</span
+                      ><span
+                        *ngIf="billingAddressCity?.errors?.['minlength']  || billingAddressCity?.errors?.['notOnlyWhitespace']"
+                      >
+                        City must be at least 2 characters long.
+                      </span>
+                    </div>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -199,6 +392,24 @@
                       formControlName="zipCode"
                       class="ecommerce-checkout-shipping-state-province checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        billingAddressZipCode?.invalid &&
+                        (billingAddressZipCode?.dirty ||
+                          billingAddressZipCode?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="billingAddressZipCode?.errors?.['required'] || billingAddressZipCode?.errors?.['notOnlyWhitespace']"
+                      >
+                        Zip code is required.</span
+                      ><span
+                        *ngIf="billingAddressZipCode?.errors?.['minlength']  || billingAddressZipCode?.errors?.['notOnlyWhitespace']"
+                      >
+                        Zip code must be at least 2 characters long.
+                      </span>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -224,6 +435,24 @@
                   formControlName="nameOnCard"
                   class="ecommerce-checkout-shipping-street-address-optional checkout-input"
                 />
+                <div
+                  *ngIf="
+                    creditCardNameOnCard?.invalid &&
+                    (creditCardNameOnCard?.dirty ||
+                      creditCardNameOnCard?.touched)
+                  "
+                  class="validation-msg"
+                >
+                  <span
+                    *ngIf="creditCardNameOnCard?.errors?.['required'] || creditCardNameOnCard?.errors?.['notOnlyWhitespace']"
+                  >
+                    Name on card is required.</span
+                  ><span
+                    *ngIf="creditCardNameOnCard?.errors?.['minlength']  || creditCardNameOnCard?.errors?.['notOnlyWhitespace']"
+                  >
+                    Name on card must be at least 2 characters long.
+                  </span>
+                </div>
                 <label class="ecommerce-checkout-label checkout-label"
                   >Card Number *</label
                 ><input
@@ -231,6 +460,21 @@
                   formControlName="cardNumber"
                   class="ecommerce-checkout-shipping-street-address-optional checkout-input"
                 />
+                <div
+                  *ngIf="
+                    creditCardNumber?.invalid &&
+                    (creditCardNumber?.dirty || creditCardNumber?.touched)
+                  "
+                  class="validation-msg"
+                >
+                  <span
+                    *ngIf="creditCardNumber?.errors?.['required'] || creditCardNumber?.errors?.['notOnlyWhitespace']"
+                  >
+                    Card number is required.</span
+                  ><span *ngIf="creditCardNumber?.errors?.['pattern']">
+                    Card number must be 16 digits.
+                  </span>
+                </div>
                 <div class="ecommerce-checkout-row">
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -240,6 +484,24 @@
                       formControlName="securityCode"
                       class="ecommerce-checkout-shipping-street-address-optional checkout-input"
                     />
+                    <div
+                      *ngIf="
+                        creditCardSecurityCode?.invalid &&
+                        (creditCardSecurityCode?.dirty ||
+                          creditCardSecurityCode?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="creditCardSecurityCode?.errors?.['required'] || creditCardSecurityCode?.errors?.['notOnlyWhitespace']"
+                      >
+                        Security code is required.</span
+                      ><span
+                        *ngIf="creditCardSecurityCode?.errors?.['pattern']"
+                      >
+                        Security code must be 3 digits long.
+                      </span>
+                    </div>
                   </div>
                   <div class="ecommerce-checkout-column">
                     <label class="ecommerce-checkout-label checkout-label"
@@ -247,11 +509,24 @@
                     ><select
                       formControlName="cardType"
                       class="ecommerce-checkout-shipping-country-selector checkout-input"
-                      value="US"
                     >
-                      <option value="CA">Canada</option>
-                      <option selected="" value="US">United States</option>
+                      <option>Visa</option>
+                      <option>American Express</option>
+                      <option>Master Card</option>
                     </select>
+                    <div
+                      *ngIf="
+                        creditCardType?.invalid &&
+                        (creditCardType?.dirty || creditCardType?.touched)
+                      "
+                      class="validation-msg"
+                    >
+                      <span
+                        *ngIf="creditCardType?.errors?.['required'] || creditCardType?.errors?.['notOnlyWhitespace']"
+                      >
+                        Credit card type is required.</span
+                      >
+                    </div>
                   </div>
                 </div>
                 <div class="ecommerce-checkout-row">
@@ -323,18 +598,6 @@
                             <div class="small-text">1</div>
                           </div>
                         </div>
-                        <ul
-                          class="ecommerce-checkout-order-item-option-list cart-option-list"
-                        >
-                          <li class="cart-option">
-                            <span class="none">Quantity</span
-                            ><span>Single Card</span>
-                          </li>
-                          <li class="cart-option">
-                            <span class="none">Envelope Color</span
-                            ><span>White</span>
-                          </li>
-                        </ul>
                       </div>
                       <div class="product-price">$&nbsp;4.00&nbsp;</div>
                     </div>
