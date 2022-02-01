@@ -13,6 +13,7 @@ import { FeaturedProductComponent } from '../components/featured-product/feature
 import { CheckoutSectionComponent } from '../components/checkout-section/checkout-section.component';
 import { ProductDetailComponent } from '../components/product-detail/product-detail.component';
 import { SearchBoxComponent } from '../components/search-box/search-box.component';
+import { LoginStatusComponent } from '../components/login-status/login-status.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CheckoutSectionComponent,
     ProductDetailComponent,
     ShoppingGridComponent,
+    LoginStatusComponent,
     ProductCategoryMenuComponent,
   ],
   exports: [
@@ -44,6 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CheckoutSectionComponent,
     ProductDetailComponent,
     ShoppingGridComponent,
+    LoginStatusComponent,
     ProductCategoryMenuComponent,
     ReactiveFormsModule,
     NgbModule,
