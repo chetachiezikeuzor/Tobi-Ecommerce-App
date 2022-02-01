@@ -72,8 +72,7 @@ export class ShoppingGridComponent implements OnInit {
   handleListProducts() {
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
     if (hasCategoryId) {
-      //@ts-ignore
-      this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
+      this.currentCategoryId = +this.route.snapshot.paramMap.get('id')!;
     } else {
       this.currentCategoryId = 1;
     }
