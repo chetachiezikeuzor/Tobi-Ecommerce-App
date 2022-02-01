@@ -28,11 +28,16 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.oktaSignin.remove();
     this.oktaSignin.renderEl(
-      { el: 'okta=sign-in-widget' },
-      (response: { status: string }) => {
+      {
+        el: '#okta-sign-in-widget',
+      },
+      (response: any) => {
         if (response.status === 'SUCCESS') {
           this.oktaAuthService.signInWithRedirect();
         }
+      },
+      (error: any) => {
+        throw error;
       }
     );
   }
