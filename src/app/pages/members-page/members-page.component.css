@@ -1,0 +1,64 @@
+.flex-wrapper {
+  display: flex;
+}
+.inner-padding-right {
+  padding-right: 5em;
+}
+.column-50 {
+  position: relative;
+  width: 50%;
+}
+.sticky-section {
+  position: sticky;
+  top: 80px;
+}
+.all-caps {
+  padding-bottom: 1em;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.product-rich-text:after,
+.product-rich-text:before {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.button.outline {
+  background-color: transparent;
+  color: #212806;
+}
+.column-50 {
+  position: relative;
+  width: 50%;
+}
+.image-wrapper {
+  height: 520px;
+  overflow: hidden;
+}
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.div-absolute.journal-circle {
+  left: auto;
+  top: -75px;
+  right: -75px;
+  bottom: auto;
+}
+.div-absolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.circle-image {
+  width: 150px;
+  height: 150px;
+}
