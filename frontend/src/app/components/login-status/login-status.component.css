@@ -1,0 +1,26 @@
+.small {
+  padding: 0.2em;
+  padding-right: 1.8em;
+  padding-left: 1.8em;
+  border-radius: 999px;
+  font-size: 1em;
+  font-weight: 400;
+  display: inline-block;
+  min-width: 20px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+.login-status-user-info {
+  padding: 0.2em;
+  padding-right: 1.8em;
+  padding-left: 1.8em;
+  border-radius: 999px;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  text-align: center;
+}

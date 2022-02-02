@@ -28,7 +28,8 @@
               "src/assets/css/icons.css",
               "src/assets/css/relativemono.css",
               "src/assets/css/thicccboi.css",
-              "src/assets/css/corben.css"
+              "src/assets/css/corben.css",
+              "node_modules/@okta/okta-signin-widget/dist/css/okta-sign-in.min.css"
             ],
             "scripts": []
           },
@@ -96,7 +97,8 @@
               "src/assets/css/icons.css",
               "src/assets/css/relativemono.css",
               "src/assets/css/thicccboi.css",
-              "src/assets/css/corben.css"
+              "src/assets/css/corben.css",
+              "node_modules/@okta/okta-signin-widget/dist/css/okta-sign-in.min.css"
             ],
             "scripts": []
           }
