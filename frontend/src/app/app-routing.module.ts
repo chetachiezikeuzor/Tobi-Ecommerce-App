@@ -12,6 +12,9 @@ import { MembersPageComponent } from './pages/members-page/members-page.componen
 import tobiAppConfig from './config/tobi-app-config';
 import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
 import { ProductService } from './services/product.service';
+import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { OrderHistoryPageComponent } from './pages/order-history-page/order-history-page.component';
 
 const oktaConfig = Object.assign(
   {
@@ -25,6 +28,11 @@ const oktaConfig = Object.assign(
 
 const routes: Routes = [
   {
+    path: 'order-history',
+    component: OrderHistoryPageComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
     path: 'members',
     component: MembersPageComponent,
     canActivate: [OktaAuthGuard],
@@ -32,13 +40,13 @@ const routes: Routes = [
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'home', component: HomePageComponent },
-  { path: 'products/:id', component: ProductDetailComponent },
+  { path: 'products/:id', component: ProductDetailPageComponent },
   { path: 'search/:keyword', component: ShoppingPageComponent },
   { path: 'categories/:id', component: ShoppingPageComponent },
   { path: 'categories', component: ShoppingPageComponent },
   { path: 'products', component: ShoppingPageComponent },
   { path: 'shop', component: ShoppingPageComponent },
-  { path: 'checkout', component: CheckoutSectionComponent },
+  { path: 'checkout', component: CheckoutPageComponent },
   { path: '', component: HomePageComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
