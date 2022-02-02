@@ -6,7 +6,8 @@ import { ShoppingPageComponent } from './pages/shopping-page/shopping-page.compo
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { OktaCallbackComponent } from '@okta/okta-angular';
+import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
+import { MembersPageComponent } from './pages/members-page/members-page.component';
 
 import tobiAppConfig from './config/tobi-app-config';
 import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
@@ -14,10 +15,8 @@ import { ProductService } from './services/product.service';
 
 const oktaConfig = Object.assign(
   {
-    onAuthRequired: (injector: any) => {
+    onAuthRequired: (oktaAuth: any, injector: any) => {
       const router = injector.get(Router);
-
-      // Redirect the user to your custom login page
       router.navigate(['/login']);
     },
   },
@@ -25,6 +24,11 @@ const oktaConfig = Object.assign(
 );
 
 const routes: Routes = [
+  {
+    path: 'members',
+    component: MembersPageComponent,
+    canActivate: [OktaAuthGuard],
+  },
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'home', component: HomePageComponent },
