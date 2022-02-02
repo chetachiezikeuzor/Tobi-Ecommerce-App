@@ -10,7 +10,7 @@ export class CartService {
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
 
-  storage: Storage = sessionStorage;
+  storage: Storage = sessionStorage; // this willclear after browser is closed out. localstorage will allow for it to persist even after broswerr restarts
 
   constructor() {
     let data = JSON.parse(this.storage.getItem('cartItems')!);
