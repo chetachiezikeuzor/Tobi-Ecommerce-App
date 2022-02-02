@@ -1,9 +1,6 @@
 package com.tobi.ecommerce.configurations;
 
-import com.tobi.ecommerce.models.Country;
-import com.tobi.ecommerce.models.Product;
-import com.tobi.ecommerce.models.ProductCategory;
-import com.tobi.ecommerce.models.State;
+import com.tobi.ecommerce.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -41,6 +38,7 @@ public class TobiDataRestConfiguration implements RepositoryRestConfigurer {
         disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
         disableHttpMethods(Country.class, config, theUnsupportedActions);
         disableHttpMethods(State.class, config, theUnsupportedActions);
+        disableHttpMethods(Order.class, config, theUnsupportedActions);
 
         exposeIds(config);
 
