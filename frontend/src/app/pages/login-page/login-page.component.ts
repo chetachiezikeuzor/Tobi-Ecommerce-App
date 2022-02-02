@@ -13,6 +13,7 @@ export class LoginPageComponent implements OnInit {
 
   constructor(private oktaAuthService: OktaAuthService) {
     this.oktaSignin = new OktaSignIn({
+      features: { registration: true },
       baseUrl: tobiAppConfig.oidc.issuer.split('/oauth2')[0],
       clientId: tobiAppConfig.oidc.clientId,
       redirectUri: tobiAppConfig.oidc.redirectUri,
