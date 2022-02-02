@@ -14,7 +14,7 @@ VARIABLES
   --alice-blue: #e3e7ef;
   --ice-blue: #eaeef5;
   --rose-red: #ff5582;
-  --border-shade: #e5ecf5;
+  --border-shade: #181818;
   --electric-pink: #f9ccff;
   --deep-shadow: #171c26;
   --deep-coven: #66666e;
@@ -303,4 +303,111 @@ p {
 #okta-sign-in.auth-container .button-primary {
   background-color: var(--granite) !important;
   background: var(--granite) !important;
+}
+/*table*/
+table {
+  display: table;
+  border-collapse: separate;
+  -webkit-border-horizontal-spacing: 2px;
+  -webkit-border-vertical-spacing: 2px;
+  border: 0;
+}
+table * {
+  font-weight: 400;
+}
+table th {
+  background-color: transparent;
+  font-weight: 500;
+  font-size: var(--large-font-size) !important;
+  border-bottom: 3px solid var(--border-shade) !important;
+}
+table {
+  width: 100%;
+  border: 1px solid transparent;
+  border-spacing: 0;
+  overflow: hidden;
+}
+thead {
+  text-align: left;
+  display: table-header-group;
+  vertical-align: middle;
+  border-top-color: inherit;
+  border-right-color: inherit;
+  border-bottom-color: inherit;
+  border-left-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-top-color: inherit;
+  border-right-color: inherit;
+  border-bottom-color: inherit;
+  border-left-color: inherit;
+}
+th {
+  text-align: inherit;
+}
+th {
+  font-weight: 500 !important;
+}
+td,
+th {
+  display: table-cell;
+  vertical-align: inherit;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-top-color: inherit;
+  border-right-color: inherit;
+  border-bottom-color: inherit;
+  border-left-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-top-color: inherit;
+  border-right-color: inherit;
+  border-bottom-color: inherit;
+  border-left-color: inherit;
+  border-bottom: 1px solid var(--border-shade) !important;
+  border-top: 1px solid var(--border-shade) !important;
+}
+table.table tr:nth-child(even) {
+  background-color: var(--smoke-white);
+}
+/*borderchange*/
+table td,
+table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid transparent;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-top-color: inherit;
+  border-right-color: inherit;
+  border-bottom-color: inherit;
+  border-left-color: inherit;
+}
+tbody,
+td,
+tfoot,
+th,
+thead {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+.table > thead > tr > th {
+  border-top: 1px solid transparent !important;
+}
+table > tbody > tr > * {
+  transition: 200ms;
+  cursor: pointer;
+}
+table > tbody > tr:hover > * {
+  background-color: var(--smoke-white);
+  color: var(--text-normal);
 }

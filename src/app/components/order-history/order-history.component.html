@@ -1,27 +1,42 @@
-<section class="section">
+<section
+  class="section"
+  style="
+    position: relative;
+    min-height: 100vh;
+    margin-bottom: 3em;
+    padding-right: 5em;
+    padding-left: 5em;
+    -webkit-box-align: end;
+    align-items: flex-end;
+  "
+>
   <h3>Your Orders</h3>
 
   <div *ngIf="orderHistoryList.length > 0">
-    <table class="table">
-      <tr>
-        <th>Order Tracking Number</th>
-        <th>Total Price</th>
-        <th>Total Quantity</th>
-        <th>Date</th>
-      </tr>
+    <table class="table" style="border: none">
+      <thead class="thead">
+        <tr>
+          <th>Order Tracking Number</th>
+          <th>Total Price</th>
+          <th>Total Quantity</th>
+          <th>Date</th>
+        </tr>
+      </thead>
 
-      <tr *ngFor="let tempOrderHistory of orderHistoryList">
-        <td>
-          {{ tempOrderHistory.orderTrackingNumber }}
-        </td>
-        <td>
-          {{ tempOrderHistory.totalPrice | currency: "USD" }}
-        </td>
-        <td>
-          {{ tempOrderHistory.totalQuantity }}
-        </td>
-        <td>{{ tempOrderHistory.dateCreated | date: "medium" }}</td>
-      </tr>
+      <tbody>
+        <tr *ngFor="let tempOrderHistory of orderHistoryList">
+          <td>
+            {{ tempOrderHistory.orderTrackingNumber }}
+          </td>
+          <td>
+            {{ tempOrderHistory.totalPrice | currency: "USD" }}
+          </td>
+          <td>
+            {{ tempOrderHistory.totalQuantity }}
+          </td>
+          <td>{{ tempOrderHistory.dateCreated | date: "medium" }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 
