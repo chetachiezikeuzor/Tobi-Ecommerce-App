@@ -13,7 +13,6 @@ export class LoginPageComponent implements OnInit {
 
   constructor(private oktaAuthService: OktaAuthService) {
     this.oktaSignin = new OktaSignIn({
-      logo: 'assets/images/logo.png',
       baseUrl: tobiAppConfig.oidc.issuer.split('/oauth2')[0],
       clientId: tobiAppConfig.oidc.clientId,
       redirectUri: tobiAppConfig.oidc.redirectUri,
@@ -27,6 +26,7 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.oktaSignin.remove();
+
     this.oktaSignin.renderEl(
       {
         el: '#okta-sign-in-widget',
