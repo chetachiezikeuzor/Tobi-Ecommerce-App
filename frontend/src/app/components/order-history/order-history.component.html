@@ -10,53 +10,55 @@
     align-items: flex-end;
   "
 >
-  <h3>Your Orders</h3>
+  <div class="inner-spacing">
+    <h3>Your Orders</h3>
 
-  <div *ngIf="orderHistoryList.length > 0">
-    <table class="table" style="border: none">
-      <thead class="thead">
-        <tr>
-          <th>Order Tracking Number</th>
-          <th>Total Price</th>
-          <th>Total Quantity</th>
-          <th>Date</th>
-        </tr>
-      </thead>
+    <div *ngIf="orderHistoryList.length > 0">
+      <table class="table" style="border: none">
+        <thead class="thead">
+          <tr>
+            <th>Order Tracking Number</th>
+            <th>Total Price</th>
+            <th>Total Quantity</th>
+            <th>Date</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr *ngFor="let tempOrderHistory of orderHistoryList">
-          <td>
-            {{ tempOrderHistory.orderTrackingNumber }}
-          </td>
-          <td>
-            {{ tempOrderHistory.totalPrice | currency: "USD" }}
-          </td>
-          <td>
-            {{ tempOrderHistory.totalQuantity }}
-          </td>
-          <td>{{ tempOrderHistory.dateCreated | date: "medium" }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <tbody>
+          <tr *ngFor="let tempOrderHistory of orderHistoryList">
+            <td>
+              {{ tempOrderHistory.orderTrackingNumber }}
+            </td>
+            <td>
+              {{ tempOrderHistory.totalPrice | currency: "USD" }}
+            </td>
+            <td>
+              {{ tempOrderHistory.totalQuantity }}
+            </td>
+            <td>{{ tempOrderHistory.dateCreated | date: "medium" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <!--if history is empty-->
-  <div
-    *ngIf="orderHistoryList?.length! == 0"
-    class="alert"
-    style="
-      display: block;
-      width: 84%;
-      margin: 0 auto;
-      font-size: 1.23em;
-      border: 1px solid #cdc3918c;
-      background-color: #cdc3913a;
-      padding: 20px 40px;
-      margin-top: 4rem;
-      color: #cdc391;
-      line-height: 32px;
-    "
-  >
-    No orders found.
+    <!--if history is empty-->
+    <div
+      *ngIf="orderHistoryList?.length! == 0"
+      class="alert"
+      style="
+        display: block;
+        width: 84%;
+        margin: 0 auto;
+        font-size: 1.23em;
+        border: 1px solid #cdc3918c;
+        background-color: #cdc3913a;
+        padding: 20px 40px;
+        margin-top: 4rem;
+        color: #cdc391;
+        line-height: 32px;
+      "
+    >
+      No orders found.
+    </div>
   </div>
 </section>
