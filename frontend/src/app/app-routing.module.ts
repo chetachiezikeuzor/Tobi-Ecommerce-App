@@ -1,12 +1,32 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CheckoutSectionComponent } from './components/checkout-section/checkout-section.component';
 import { ShoppingPageComponent } from './pages/shopping-page/shopping-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { OktaCallbackComponent } from '@okta/okta-angular';
+
+import tobiAppConfig from './config/tobi-app-config';
+import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
+import { ProductService } from './services/product.service';
+
+const oktaConfig = Object.assign(
+  {
+    onAuthRequired: (injector: any) => {
+      const router = injector.get(Router);
+
+      // Redirect the user to your custom login page
+      router.navigate(['/login']);
+    },
+  },
+  tobiAppConfig.oidc
+);
 
 const routes: Routes = [
+  { path: 'login/callback', component: OktaCallbackComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: 'home', component: HomePageComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'search/:keyword', component: ShoppingPageComponent },
@@ -23,7 +43,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
     BrowserModule,
+    OktaAuthModule,
   ],
   exports: [RouterModule],
+  providers: [ProductService, { provide: OKTA_CONFIG, useValue: oktaConfig }],
 })
 export class AppRoutingModule {}

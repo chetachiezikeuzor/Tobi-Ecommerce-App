@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductCategoryMenuComponent } from '../components/product-category-menu/product-category-menu.component';
 import { FooterComponent } from 'src/app/components/footer-section/footer-section.component';
@@ -17,6 +17,20 @@ import { LoginStatusComponent } from '../components/login-status/login-status.co
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import tobiAppConfig from '../config/tobi-app-config';
+import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
+import { ProductService } from '../services/product.service';
+
+const oktaConfig = Object.assign(
+  {
+    onAuthRequired: (injector: any) => {
+      const router = injector.get(Router);
+      // Redirect the user to the custom login page
+      router.navigate(['/login']);
+    },
+  },
+  tobiAppConfig
+);
 
 @NgModule({
   declarations: [
@@ -52,5 +66,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbModule,
   ],
   imports: [CommonModule, RouterModule, NgbModule, ReactiveFormsModule],
+  providers: [ProductService],
 })
 export class SharedModule {}
