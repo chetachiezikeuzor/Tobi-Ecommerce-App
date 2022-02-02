@@ -35,6 +35,8 @@ export class CheckoutSectionComponent implements OnInit {
   shippingAddressStates: State[] = [];
   billingAddressStates: State[] = [];
 
+  storage: Storage = sessionStorage;
+
   constructor(
     private formBuilder: FormBuilder,
     private shopFormService: ShopFormService,
@@ -45,6 +47,9 @@ export class CheckoutSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.reviewCartDetails();
+
+    // read user's email from storage
+    const theEmail = JSON.parse(this.storage.getItem('userEmail')!);
 
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
@@ -58,7 +63,7 @@ export class CheckoutSectionComponent implements OnInit {
           Validators.minLength(2),
           TobiShopValidators.notOnlyWhitespace,
         ]),
-        email: new FormControl('', [
+        email: new FormControl(theEmail, [
           Validators.required,
           Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
         ]),
