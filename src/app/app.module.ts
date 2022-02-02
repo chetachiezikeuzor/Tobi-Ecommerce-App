@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MembersPageComponent } from './pages/members-page/members-page.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MembersPageComponent } from './pages/members-page/members-page.componen
     ShoppingCartDetailsComponent,
     LoginPageComponent,
     MembersPageComponent,
+    OrderHistoryComponent,
   ],
   imports: [SharedModule, BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [ProductService],
