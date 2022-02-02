@@ -284,6 +284,7 @@ p {
 #okta-sign-in.auth-container.main-container {
   background-color: var(--dark-beige) !important;
   border-radius: 40px !important;
+  width: 600px;
 }
 #okta-sign-in .button,
 #okta-sign-in .button.link-button {
