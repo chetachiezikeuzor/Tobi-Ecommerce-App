@@ -45,6 +45,9 @@
   position: absolute;
   overflow: hidden;
   border-radius: 50%;
+  border: 8px solid #f8f8f8;
+  background-color: #f8f8f8 !important;
+  box-shadow: 0 2px 0 hsla(0, 0%, 68.6%, 0.12);
 }
 .call-to-action-image {
   width: 100%;

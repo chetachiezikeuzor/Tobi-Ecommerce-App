@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { CheckoutSectionComponent } from './components/checkout-section/checkout-section.component';
 import { ShoppingPageComponent } from './pages/shopping-page/shopping-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BrowserModule } from '@angular/platform-browser';

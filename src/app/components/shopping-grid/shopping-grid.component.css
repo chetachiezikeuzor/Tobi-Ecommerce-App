@@ -36,15 +36,21 @@
   height: 420px;
   overflow: hidden;
   margin-bottom: 24px;
+  border-radius: 12px;
+  padding: 8px;
+  transition: transform 0.4s ease-in-out;
+  background-color: #f8f8f8 !important;
+  border-color: #ddd #ddd #f1f1f1;
+  box-shadow: 0 2px 0 hsla(0, 0%, 68.6%, 0.12);
 }
-.product-link:hover .product-image {
+.product-link-image-wrapper:hover {
   transform: scale(1.08);
 }
 .product-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0px;
+  border-radius: 8px;
   transition: transform 0.4s ease-in-out;
 }
 .product-heading {

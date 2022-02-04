@@ -63,7 +63,6 @@ export class ProductService {
   }
 
   getProductCategoryById(theCategoryId: number): Observable<ProductCategory> {
-    console.log(`${this.categoryUrl}/${theCategoryId}`);
     const categoryUrl = `${this.categoryUrl}/${theCategoryId}`;
     return this.httpClient.get<ProductCategory>(categoryUrl);
   }

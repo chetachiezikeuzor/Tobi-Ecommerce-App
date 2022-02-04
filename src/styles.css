@@ -3,7 +3,7 @@ VARIABLES
 ------------------*/
 
 :root {
-  --beige: #f3f1e3;
+  --beige: #fafafa;
   --pink-beige: #fdf2f2;
   --dark-beige: #e0cfba;
 
@@ -143,8 +143,11 @@ p {
   background: var(--beige);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--dark-beige);
+  background: #f8f8f8;
   border-radius: 0px;
+}
+.button:hover {
+  transform: scale(1.05);
 }
 .button {
   position: relative;
@@ -164,6 +167,25 @@ p {
   text-decoration: none;
   cursor: pointer;
   transition: all 3s;
+
+  cursor: pointer;
+  margin-right: 6px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 2px 4px 0 rgba(74, 58, 255, 0.02);
+  -webkit-transition: color 300ms ease, border-color 300ms ease,
+    box-shadow 300ms ease, background-color 300ms ease,
+    -webkit-transform 300ms ease;
+  transition: color 300ms ease, border-color 300ms ease, box-shadow 300ms ease,
+    background-color 300ms ease, -webkit-transform 300ms ease;
+  transition: color 300ms ease, border-color 300ms ease, transform 300ms ease,
+    box-shadow 300ms ease, background-color 300ms ease;
+  transition: color 300ms ease, border-color 300ms ease, transform 300ms ease,
+    box-shadow 300ms ease, background-color 300ms ease,
+    -webkit-transform 300ms ease;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
 }
 .button:hover {
   color: var(--white-eade);
@@ -282,7 +304,7 @@ p {
   color: var(--granite) !important;
 }
 #okta-sign-in.auth-container.main-container {
-  background-color: var(--dark-beige) !important;
+  background-color: #f8f8f8 !important;
   border-radius: 40px !important;
   width: 500px;
 }
