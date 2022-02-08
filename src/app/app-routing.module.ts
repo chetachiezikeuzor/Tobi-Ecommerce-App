@@ -13,6 +13,8 @@ import { ProductService } from './services/product.service';
 import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { OrderHistoryPageComponent } from './pages/order-history-page/order-history-page.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 const oktaConfig = Object.assign(
   {
@@ -56,6 +58,14 @@ const routes: Routes = [
     OktaAuthModule,
   ],
   exports: [RouterModule],
-  providers: [ProductService, { provide: OKTA_CONFIG, useValue: oktaConfig }],
+  providers: [
+    ProductService,
+    { provide: OKTA_CONFIG, useValue: oktaConfig },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
 })
 export class AppRoutingModule {}
