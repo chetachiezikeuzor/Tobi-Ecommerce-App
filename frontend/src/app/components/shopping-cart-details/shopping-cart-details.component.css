@@ -216,17 +216,14 @@ img {
   flex-basis: 0%;
 }
 .cart-list {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.cart-list {
   overflow: scroll;
-  margin-right: 0.5em;
-  padding: 1.5em 1.5em 1.5em 2em;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 auto;
-  -ms-flex: 0 auto;
-  flex: 0 auto;
+  max-height: 680px;
+  padding: 0px 24px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .ecommerce-cart-list {
   overflow: auto;
