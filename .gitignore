@@ -1,2 +1,4 @@
 .history
 *.properties
+*.DS_Store
+.DS_Store
