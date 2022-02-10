@@ -171,3 +171,32 @@
     margin-right: 0;
   }
 }
+@media screen and (max-width: 761px) {
+  .product-description-content-wrapper {
+    position: relative;
+    top: unset;
+    width: 80%;
+    max-width: 600px;
+    padding-bottom: 5em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .product-image-description {
+    max-width: 600px;
+    padding-left: 2em;
+  }
+  .product-description-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+  }
+  .product-description-images-wrapper,
+  .product-description-content-wrapper {
+    width: 100%;
+  }
+  .breadcrumbs-wrapper {
+    display: none;
+  }
+}

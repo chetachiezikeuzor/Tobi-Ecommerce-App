@@ -7,6 +7,7 @@ import {
 import { Injectable } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
 import { from, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +26,8 @@ export class AuthInterceptorService implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Promise<HttpEvent<any>> {
-    const securedEndpoints = ['https://localhost:8008/api/orders'];
+    const theEndPoint = environment.tobiApiUrl + '/orders';
+    const securedEndpoints = [theEndPoint];
 
     if (securedEndpoints.some((url) => request.urlWithParams.includes(url))) {
       const accessToken = await this.oktaAuth.getAccessToken();
