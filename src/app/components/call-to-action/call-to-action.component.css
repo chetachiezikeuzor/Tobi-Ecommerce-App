@@ -71,3 +71,38 @@
   -webkit-perspective: 1000px;
   perspective: 1000px;
 }
+@media screen and (max-width: 962px) {
+  .container {
+    padding-right: 3.5em;
+    padding-left: 3.5em;
+  }
+  .flex-wrapper {
+    display: flex;
+    width: 100%;
+    margin-right: 28px;
+    padding-top: unset;
+    padding-right: unset;
+    padding-bottom: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 0 0 auto;
+  }
+  .column-50 {
+    width: 100%;
+  }
+  .inner-padding-right {
+    padding-right: unset;
+  }
+  .sticky-section {
+    margin-bottom: 2em;
+  }
+  .heading-wrapper-centered {
+    width: 100%;
+    font-size: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 3.5em;
+    text-align: center;
+  }
+}

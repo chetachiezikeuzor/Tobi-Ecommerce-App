@@ -45,4 +45,8 @@
     grid-column-gap: 1em;
     grid-template-columns: 1fr 1fr;
   }
+  .container {
+    padding-right: 2em;
+    padding-left: 2em;
+  }
 }

@@ -68,3 +68,30 @@
   width: 150px;
   height: 150px;
 }
+@media screen and (max-width: 962px) {
+  .container {
+    padding-right: 3.5em;
+    padding-left: 3.5em;
+  }
+  .flex-wrapper {
+    display: flex;
+    width: 100%;
+    margin-right: 28px;
+    padding-top: unset;
+    padding-right: unset;
+    padding-bottom: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 0 0 auto;
+  }
+  .column-50 {
+    width: 100%;
+  }
+  .inner-padding-right {
+    padding-right: unset;
+  }
+  .sticky-section {
+    margin-bottom: 2em;
+  }
+}

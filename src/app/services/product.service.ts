@@ -4,13 +4,14 @@ import { Product } from '../common/product';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ProductCategory } from '../common/product-category';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = 'https://localhost:8008/api/products';
-  private categoryUrl = 'https://localhost:8008/api/product-categories';
+  private baseUrl = environment.tobiApiUrl + '/products';
+  private categoryUrl = environment.tobiApiUrl + '/product-categories';
 
   constructor(private httpClient: HttpClient) {}
 
