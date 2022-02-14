@@ -96,3 +96,31 @@ h4.product-title {
     height: 340px;
   }
 }
+@media screen and (max-width: 991px) {
+  .category-section-container {
+    display: flex;
+    padding-left: 0;
+    flex-wrap: wrap;
+  }
+  .category-section-content-wrapper {
+    display: flex;
+    width: 100%;
+    margin-right: 28px;
+    padding-top: unset;
+    padding-right: unset;
+    padding-bottom: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 0 0 auto;
+  }
+  .category-sections {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .container {
+    padding-right: 3.5em;
+    padding-left: 3.5em;
+  }
+}

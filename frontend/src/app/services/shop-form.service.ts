@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Country } from '../common/country';
 import { State } from '../common/state';
 
@@ -8,8 +9,9 @@ import { State } from '../common/state';
   providedIn: 'root',
 })
 export class ShopFormService {
-  private countriesUrl = `https://localhost:8008/api/countries`;
-  private statesUrl = `https://localhost:8008/api/states`;
+  private countriesUrl = environment.tobiApiUrl + `/countries`;
+  private statesUrl =
+    environment.tobiApiUrl + `https://localhost:8008/api/states`;
 
   constructor(private httpClient: HttpClient) {}
 

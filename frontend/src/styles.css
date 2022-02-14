@@ -296,6 +296,13 @@ p {
     font-size: 1.5em;
   }
 }
+@media only screen and (max-width: 600px) {
+  #okta-sign-in.auth-container.main-container {
+    margin: 100px auto 0px;
+    width: unset;
+    min-width: unset;
+  }
+}
 #okta-sign-in.auth-container h2,
 #okta-sign-in.auth-container h3 {
   font-family: var(--header-font);
@@ -432,4 +439,19 @@ table > tbody > tr > * {
 table > tbody > tr:hover > * {
   background-color: var(--smoke-white);
   color: var(--text-normal);
+}
+
+@media screen and (max-width: 761px) {
+  .nav-container {
+    position: relative;
+    display: contents;
+    width: 100%;
+    max-width: none;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.5em 2em;
+    align-content: flex-end;
+    align-items: center;
+    justify-content: center;
+  }
 }

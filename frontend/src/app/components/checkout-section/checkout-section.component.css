@@ -416,3 +416,16 @@ h4 {
   color: #c75a7b;
   text-align: center;
 }
+@media screen and (max-width: 761px) {
+  form.product-description-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .product-description-images-wrapper,
+  .product-description-content-wrapper {
+    width: 100%;
+  }
+}
