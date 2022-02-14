@@ -9,4 +9,8 @@
   <button *ngIf="isAuthenticated" (click)="logout()" class="button small">
     Logout
   </button>
+
+  <button *ngIf="isAuthenticated" routerLink="/members" class="button small">
+    Member
+  </button>
 </div>
