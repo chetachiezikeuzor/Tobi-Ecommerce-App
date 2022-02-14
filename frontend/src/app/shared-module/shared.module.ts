@@ -14,6 +14,7 @@ import { CheckoutSectionComponent } from '../components/checkout-section/checkou
 import { ProductDetailComponent } from '../components/product-detail/product-detail.component';
 import { SearchBoxComponent } from '../components/search-box/search-box.component';
 import { LoginStatusComponent } from '../components/login-status/login-status.component';
+import { OrderHistoryComponent } from '../components/order-history/order-history.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -47,6 +48,7 @@ const oktaConfig = Object.assign(
     ShoppingGridComponent,
     LoginStatusComponent,
     ProductCategoryMenuComponent,
+    OrderHistoryComponent,
   ],
   exports: [
     FooterComponent,
@@ -64,6 +66,7 @@ const oktaConfig = Object.assign(
     ProductCategoryMenuComponent,
     ReactiveFormsModule,
     NgbModule,
+    OrderHistoryComponent,
   ],
   imports: [CommonModule, RouterModule, NgbModule, ReactiveFormsModule],
   providers: [ProductService],
