@@ -18,20 +18,7 @@ import { OrderHistoryComponent } from '../components/order-history/order-history
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
-import tobiAppConfig from '../config/tobi-app-config';
-import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
 import { ProductService } from '../services/product.service';
-
-const oktaConfig = Object.assign(
-  {
-    onAuthRequired: (injector: any) => {
-      const router = injector.get(Router);
-      // Redirect the user to the custom login page
-      router.navigate(['/login']);
-    },
-  },
-  tobiAppConfig
-);
 
 @NgModule({
   declarations: [

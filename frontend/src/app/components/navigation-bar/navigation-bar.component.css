@@ -13,11 +13,11 @@
   height: 70px;
   -webkit-box-align: center;
   align-items: center;
-  background-color: transparent;
+  background-color: var(--granite);
 }
 .tobi-navigation {
   position: relative;
-  background: rgba(221, 221, 221, 0);
+  background: transparent;
   z-index: 1000;
 }
 .tobi-navigation:after,
@@ -126,7 +126,7 @@
   background-color: var(--deep-shadow);
 }
 .ecommerce-cart-open-link-count {
- display: inline-block;
+  display: inline-block;
   height: 20px;
   min-width: 20px;
   margin-left: 8px;
@@ -137,5 +137,5 @@
   font-size: 11px;
   line-height: 24px;
   font-weight: 700;
-  text-align: center; 
+  text-align: center;
 }
