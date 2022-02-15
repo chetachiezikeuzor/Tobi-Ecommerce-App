@@ -10,8 +10,7 @@ import { State } from '../common/state';
 })
 export class ShopFormService {
   private countriesUrl = environment.tobiApiUrl + `/countries`;
-  private statesUrl =
-    environment.tobiApiUrl + `https://localhost:8008/api/states`;
+  private statesUrl = environment.tobiApiUrl + `/states`;
 
   constructor(private httpClient: HttpClient) {}
 
