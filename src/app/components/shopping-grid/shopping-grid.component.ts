@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/common/product';
-import { ProductService } from 'src/app/services/product.service';
+import { Product } from '../../common/product';
+import { ProductService } from '../../services/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { ProductCategory } from 'src/app/common/product-category';
-import { CartItem } from 'src/app/common/cart-item';
-import { CartService } from 'src/app/services/cart.service';
+import { ProductCategory } from '../../common/product-category';
+import { CartItem } from '../../common/cart-item';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-shopping-grid',
