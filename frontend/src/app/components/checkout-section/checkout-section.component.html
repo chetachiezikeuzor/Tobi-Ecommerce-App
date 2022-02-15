@@ -416,7 +416,9 @@
             </div>
             <!-- stripe elements cc section -->
             <div formGroupName="creditCard" class="form-area">
-              <h3>Credit or Debit Card</h3>
+              <div class="ecommerce-checkout-block-header block-header">
+                <h4>Card or Debit Card</h4>
+              </div>
 
               <div id="card-element">
                 <!-- a Stripe element will be inserted here -->
@@ -464,7 +466,11 @@
               </div>
               <div class="padding-lr-1">
                 <div class="button-wrapper">
-                  <button class="button outline inline-block" type="submit">
+                  <button
+                    [disabled]="isDisabled"
+                    class="button outline inline-block"
+                    type="submit"
+                  >
                     <div class="button-text">Complete Purchase</div>
                     <i class="ph ph-arrow-right-bold"></i>
                   </button>

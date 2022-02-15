@@ -45,6 +45,8 @@ export class CheckoutSectionComponent implements OnInit {
   cardElement: any;
   displayError: any = '';
 
+  isDisabled: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private shopFormService: ShopFormService,
@@ -270,6 +272,13 @@ export class CheckoutSectionComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log('Handling the submit button');
+
+    if (this.checkoutFormGroup.invalid) {
+      this.checkoutFormGroup.markAllAsTouched();
+      return;
+    }
+
     let order = new Order();
     order.totalPrice = this.totalPrice;
     order.totalQuantity = this.totalQuantity;
@@ -323,6 +332,7 @@ export class CheckoutSectionComponent implements OnInit {
       !this.checkoutFormGroup.invalid &&
       this.displayError.textContent === ''
     ) {
+      this.isDisabled = true;
       this.checkoutService
         .createPaymentIntent(this.paymentInfo)
         .subscribe((paymentIntentResponse) => {
@@ -332,6 +342,19 @@ export class CheckoutSectionComponent implements OnInit {
               {
                 payment_method: {
                   card: this.cardElement,
+                  billing_details: {
+                    email: purchase.customer!.email,
+                    name: `${purchase.customer!.firstName} ${
+                      purchase.customer!.lastName
+                    }`,
+                    address: {
+                      line1: purchase.billingAddress!.street,
+                      city: purchase.billingAddress!.city,
+                      state: purchase.billingAddress!.state,
+                      postal_code: purchase.billingAddress!.zipCode,
+                      country: this.billingAddressCountry!.value.code,
+                    },
+                  },
                 },
               },
               { handleActions: false }
@@ -339,6 +362,7 @@ export class CheckoutSectionComponent implements OnInit {
             .then((result: { error: { message: any } }) => {
               if (result.error) {
                 alert(`There was an error: ${result.error.message}`);
+                this.isDisabled = false;
               } else {
                 this.checkoutService.placeOrder(purchase).subscribe({
                   next: (response: { orderTrackingNumber: any }) => {
@@ -347,9 +371,11 @@ export class CheckoutSectionComponent implements OnInit {
                     );
 
                     this.resetCart();
+                    this.isDisabled = false;
                   },
                   error: (err) => {
                     alert(`There was an error: ${err.message}`);
+                    this.isDisabled = false;
                   },
                 });
               }
