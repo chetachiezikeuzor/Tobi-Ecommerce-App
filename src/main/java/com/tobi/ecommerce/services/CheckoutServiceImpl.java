@@ -23,7 +23,7 @@ public class CheckoutServiceImpl implements CheckoutService{
     private CustomerRepository customerRepository;
 
     @Autowired
-    public CheckoutServiceImpl(CustomerRepository customerRepository, @Value("${stripe.key.secret") String secretKey){
+    public CheckoutServiceImpl(CustomerRepository customerRepository, @Value("${stripe.key.secret}") String secretKey){
         this.customerRepository = customerRepository;
         // initialize stripe api with secret key
         Stripe.apiKey = secretKey;
@@ -58,6 +58,7 @@ public class CheckoutServiceImpl implements CheckoutService{
 
     @Override
     public PaymentIntent createPaymentIntent(PaymentInfo paymentInfo) throws StripeException {
+
         List<String> paymentMethodTypes = new ArrayList<>();
         paymentMethodTypes.add("card");
 
