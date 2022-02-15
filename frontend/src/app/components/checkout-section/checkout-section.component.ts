@@ -312,7 +312,7 @@ export class CheckoutSectionComponent implements OnInit {
     purchase.order = order;
     purchase.orderItems = orderItems;
 
-    this.paymentInfo.amount = this.totalPrice * 100;
+    this.paymentInfo.amount = Math.round(this.totalPrice * 100);
     this.paymentInfo.currency = 'USD';
 
     console.log(`this.paymentInfo.amount: $${this.paymentInfo.amount}`);
