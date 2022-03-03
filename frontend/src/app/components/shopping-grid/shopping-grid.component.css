@@ -44,7 +44,7 @@
   box-shadow: 0 2px 0 hsla(0, 0%, 68.6%, 0.12);
 }
 .product-link-image-wrapper:hover {
-  transform: scale(1.08);
+  transform: scale(1.04);
 }
 .product-image {
   width: 100%;
