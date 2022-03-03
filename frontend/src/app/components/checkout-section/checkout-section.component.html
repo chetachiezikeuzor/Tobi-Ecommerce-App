@@ -414,148 +414,21 @@
                 </div>
               </fieldset>
             </div>
-            <!--payment form group-->
-            <div
-              formGroupName="creditCard"
-              class="ecommerce-checkout-payment-info-wrapper"
-            >
+            <!-- stripe elements cc section -->
+            <div formGroupName="creditCard" class="form-area">
               <div class="ecommerce-checkout-block-header block-header">
-                <h4>Payment Info</h4>
-                <img
-                  src="assets/images/site/payment_methods.svg"
-                  loading="lazy"
-                  class="payment-method"
-                />
+                <h4>Card or Debit Card</h4>
               </div>
-              <fieldset class="ecommerce-checkout-block-content block-content">
-                <label class="ecommerce-checkout-label checkout-label"
-                  >Name on Card *</label
-                ><input
-                  type="text"
-                  formControlName="nameOnCard"
-                  class="ecommerce-checkout-shipping-street-address-optional checkout-input"
-                />
-                <div
-                  *ngIf="
-                    creditCardNameOnCard?.invalid &&
-                    (creditCardNameOnCard?.dirty ||
-                      creditCardNameOnCard?.touched)
-                  "
-                  class="validation-msg"
-                >
-                  <span
-                    *ngIf="creditCardNameOnCard?.errors?.['required'] || creditCardNameOnCard?.errors?.['notOnlyWhitespace']"
-                  >
-                    Name on card is required.</span
-                  ><span
-                    *ngIf="creditCardNameOnCard?.errors?.['minlength']  || creditCardNameOnCard?.errors?.['notOnlyWhitespace']"
-                  >
-                    Name on card must be at least 2 characters long.
-                  </span>
-                </div>
-                <label class="ecommerce-checkout-label checkout-label"
-                  >Card Number *</label
-                ><input
-                  type="text"
-                  formControlName="cardNumber"
-                  class="ecommerce-checkout-shipping-street-address-optional checkout-input"
-                />
-                <div
-                  *ngIf="
-                    creditCardNumber?.invalid &&
-                    (creditCardNumber?.dirty || creditCardNumber?.touched)
-                  "
-                  class="validation-msg"
-                >
-                  <span
-                    *ngIf="creditCardNumber?.errors?.['required'] || creditCardNumber?.errors?.['notOnlyWhitespace']"
-                  >
-                    Card number is required.</span
-                  ><span *ngIf="creditCardNumber?.errors?.['pattern']">
-                    Card number must be 16 digits.
-                  </span>
-                </div>
-                <div class="ecommerce-checkout-row">
-                  <div class="ecommerce-checkout-column">
-                    <label class="ecommerce-checkout-label checkout-label"
-                      >Security Code *</label
-                    ><input
-                      type="text"
-                      formControlName="securityCode"
-                      class="ecommerce-checkout-shipping-street-address-optional checkout-input"
-                    />
-                    <div
-                      *ngIf="
-                        creditCardSecurityCode?.invalid &&
-                        (creditCardSecurityCode?.dirty ||
-                          creditCardSecurityCode?.touched)
-                      "
-                      class="validation-msg"
-                    >
-                      <span
-                        *ngIf="creditCardSecurityCode?.errors?.['required'] || creditCardSecurityCode?.errors?.['notOnlyWhitespace']"
-                      >
-                        Security code is required.</span
-                      ><span
-                        *ngIf="creditCardSecurityCode?.errors?.['pattern']"
-                      >
-                        Security code must be 3 digits long.
-                      </span>
-                    </div>
-                  </div>
-                  <div class="ecommerce-checkout-column">
-                    <label class="ecommerce-checkout-label checkout-label"
-                      >Card Type *</label
-                    ><select
-                      formControlName="cardType"
-                      class="ecommerce-checkout-shipping-country-selector checkout-input"
-                    >
-                      <option>Visa</option>
-                      <option>American Express</option>
-                      <option>Master Card</option>
-                    </select>
-                    <div
-                      *ngIf="
-                        creditCardType?.invalid &&
-                        (creditCardType?.dirty || creditCardType?.touched)
-                      "
-                      class="validation-msg"
-                    >
-                      <span
-                        *ngIf="creditCardType?.errors?.['required'] || creditCardType?.errors?.['notOnlyWhitespace']"
-                      >
-                        Credit card type is required.</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="ecommerce-checkout-row">
-                  <div class="ecommerce-checkout-column">
-                    <label class="ecommerce-checkout-label checkout-label"
-                      >Expiration Month *</label
-                    ><select
-                      formGroupName="expirationMonth"
-                      class="ecommerce-checkout-shipping-country-selector checkout-input"
-                    >
-                      <option *ngFor="let month of creditCardMonths">
-                        {{ month }}
-                      </option>
-                    </select>
-                  </div>
-                  <div class="ecommerce-checkout-column">
-                    <label class="ecommerce-checkout-label checkout-label"
-                      >Expiration Year *</label
-                    ><select
-                      formGroupName="expirationMonth"
-                      class="ecommerce-checkout-shipping-country-selector checkout-input"
-                    >
-                      <option *ngFor="let year of creditCardYears">
-                        {{ year }}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
+
+              <div id="card-element">
+                <!-- a Stripe element will be inserted here -->
+              </div>
+
+              <!-- Used to display form errors -->
+              <div
+                id="card-errors"
+                class="displayError.textContent!=='': 'alert alert-danger mt-1'"
+              ></div>
             </div>
           </div>
         </div>
@@ -593,7 +466,11 @@
               </div>
               <div class="padding-lr-1">
                 <div class="button-wrapper">
-                  <button class="button outline inline-block" type="submit">
+                  <button
+                    [disabled]="isDisabled"
+                    class="button outline inline-block"
+                    type="submit"
+                  >
                     <div class="button-text">Complete Purchase</div>
                     <i class="ph ph-arrow-right-bold"></i>
                   </button>
