@@ -21,6 +21,8 @@ export class ShoppingGridComponent implements OnInit {
   thePageSize: number = 6;
   theTotalElements: number = 0;
   previousKeyword?: string | null = null;
+  
+   
 
   constructor(
     private productService: ProductService,
@@ -32,6 +34,18 @@ export class ShoppingGridComponent implements OnInit {
     this.route.paramMap.subscribe(() => {
       this.listProducts();
     });
+  }
+
+  isEqualZero (theNumber: number | undefined) {
+
+    if (theNumber == 0) {
+          return true
+
+    }
+    else{
+      return false
+    }
+
   }
 
   updatePageSize(e: Event) {

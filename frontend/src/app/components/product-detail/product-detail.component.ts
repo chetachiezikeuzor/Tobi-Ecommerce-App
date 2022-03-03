@@ -5,6 +5,8 @@ import { Product } from 'src/app/common/product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
+tempProduct: Product
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -24,6 +26,18 @@ export class ProductDetailComponent implements OnInit {
     this.route.paramMap.subscribe(() => {
       this.handleProductDetails();
     });
+  }
+
+  isEqualZero (theNumber: number | undefined) {
+
+    if (theNumber == 0) {
+          return true
+
+    }
+    else{
+      return false
+    }
+
   }
 
   handleProductDetails() {

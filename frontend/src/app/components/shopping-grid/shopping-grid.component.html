@@ -1,9 +1,6 @@
 <section class="section margin-tb-9-5" style="scroll-behavior: smooth">
   <div class="container">
-    <div
-      class="flex-wrapper reverse-wrap"
-      style="padding-left: 2em; padding-right: 2em"
-    >
+    <div class="flex-wrapper reverse-wrap" style="padding-left: 2em; padding-right: 2em">
       <div class="inner-padding-right">
         <div class="sticky-section">
           <div class="dynamic-list">
@@ -15,43 +12,44 @@
       <div style="width: 100%">
         <div class="dynamic-list">
           <div role="list" class="product-grid-twos sidebar dynamic-items">
-            <div
-              role="listitem"
-              class="dynamic-item"
-              style="text-align: center"
-              *ngFor="let tempProduct of products"
-            >
-              <a
-                routerLink="/products/{{ tempProduct.id }}"
-                class="product-link inline-block"
-                ><div class="product-link-image-wrapper">
-                  <img
-                    src="{{ tempProduct?.imageUrl }}"
+            <div role="listitem" class="dynamic-item" style="text-align: center" *ngFor="let tempProduct of products" [ngStyle]="{ opacity: tempProduct.unitsInStock == 0 ? 0.5 : 1 }">
+              <a routerLink="/products/{{ tempProduct.id }}" class="product-link inline-block">
+                <div class="product-link-image-wrapper">
+                  <img src="{{ tempProduct?.imageUrl }}"
                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 45vw, (max-width: 996px) 32vw, 22vw"
-                    class="product-image hover-image"
-                  />
+                    class="product-image hover-image" />
                 </div>
                 <h5 class="product-heading">{{ tempProduct?.name }}</h5>
+               
                 <div class="product-price">
                   {{ tempProduct?.unitPrice | currency: "USD" }}
                 </div>
               </a>
               <div class="button-wrapper" style="padding-top: 1em">
-                <button
-                  (click)="addToCart(tempProduct)"
-                  class="button inline-block"
-                  style="text-align: center; justify-content: center"
-                >
-                  <div class="button-text">Add to cart</div>
+                <button 
+                [disabled]="isEqualZero(tempProduct.unitsInStock)"
+                [ngStyle]="{ opacity: tempProduct.unitsInStock == 0 ? 0.5 : 1 }"
+                (click)="addToCart(tempProduct)"
+                 class="button inline-block"
+                  style="text-align: center; justify-content: center">
+                  <div *ngIf="tempProduct?.unitsInStock !== 0"class="button-text">
+                    Add to Cart
+                    </div>
+
+                  <div *ngIf="tempProduct?.unitsInStock == 0"class="button-text">
+                    Sold Out
+                    </div>
+                  
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div
-          *ngIf="products?.length == 0"
-          class="alert"
-          style="
+
+      
+        
+
+        <div *ngIf="products?.length == 0" class="alert" style="
             display: block;
             width: 100%;
             font-size: 1.23em;
@@ -60,19 +58,12 @@
             padding: 20px 40px;
             color: #cdc391;
             line-height: 32px;
-          "
-        >
+          ">
           No products found.
         </div>
         <div class="footer-pagination">
-          <ngb-pagination
-            [(page)]="thePageNumber"
-            [pageSize]="thePageSize"
-            [maxSize]="4"
-            [boundaryLinks]="true"
-            [collectionSize]="theTotalElements"
-            (pageChange)="listProducts()"
-          >
+          <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [maxSize]="4" [boundaryLinks]="true"
+            [collectionSize]="theTotalElements" (pageChange)="listProducts()">
           </ngb-pagination>
 
           <div>
