@@ -17,6 +17,7 @@ import { ShopFormService } from 'src/app/services/shop-form.service';
 import { TobiShopValidators } from 'src/app/validators/tobi-shop-validators';
 import { environment } from 'src/environments/environment';
 import { PaymentInfo } from 'src/app/common/payment-info';
+import { InventoryPass } from 'src/app/common/inventory-pass';
 
 @Component({
   selector: 'app-checkout-section',
@@ -135,8 +136,7 @@ export class CheckoutSectionComponent implements OnInit {
           Validators.pattern('[0-9]{3}'),
         ]),
         expirationMonth: [''],
-        expirationYear: [''],
-        */
+        expirationYear: [''],*/
       }),
     });
     /*
@@ -148,8 +148,7 @@ export class CheckoutSectionComponent implements OnInit {
 
     this.shopFormService.getCreditCardMonths(startMonth).subscribe((data) => {
       this.creditCardMonths = data;
-    });
-    */
+    });*/
 
     this.shopFormService.getCountries().subscribe((data) => {
       this.countries = data;
@@ -271,6 +270,26 @@ export class CheckoutSectionComponent implements OnInit {
     }
   }
 
+  createInventoryItems(purchase: Purchase): void {
+    for (let item of purchase?.orderItems!) {
+      let inventoryPass: InventoryPass = {
+        productId: item.productId,
+        numProducts: item.quantity,
+      };
+
+      console.log(item.productId);
+
+      this.checkoutService.logInventory(inventoryPass).subscribe({
+        next: (response: { message: any }) => {
+          console.log(`${response.message}`);
+        },
+        error: (err) => {
+          console.log(`There was an error: ${err.message}`);
+        },
+      });
+    }
+  }
+
   onSubmit() {
     console.log('Handling the submit button');
 
@@ -323,10 +342,11 @@ export class CheckoutSectionComponent implements OnInit {
 
     this.paymentInfo.amount = Math.round(this.totalPrice * 100);
     this.paymentInfo.currency = 'USD';
+    this.paymentInfo.receiptEmail = purchase.customer?.email;
 
     console.log(`this.paymentInfo.amount: $${this.paymentInfo.amount}`);
 
-    // call checkouut service rest api
+    // call checkout service rest api
 
     if (
       !this.checkoutFormGroup.invalid &&
@@ -364,6 +384,7 @@ export class CheckoutSectionComponent implements OnInit {
                 alert(`There was an error: ${result.error.message}`);
                 this.isDisabled = false;
               } else {
+                this.createInventoryItems(purchase);
                 this.checkoutService.placeOrder(purchase).subscribe({
                   next: (response: { orderTrackingNumber: any }) => {
                     alert(
@@ -400,6 +421,7 @@ export class CheckoutSectionComponent implements OnInit {
     this.router.navigateByUrl('/products');
   }
 
+  /*
   handleMonthsAndYears() {
     const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
 
@@ -419,7 +441,7 @@ export class CheckoutSectionComponent implements OnInit {
     this.shopFormService.getCreditCardMonths(startMonth).subscribe((data) => {
       this.creditCardMonths = data;
     });
-  }
+  }*/
 
   getStates(formGroupName: string) {
     const formGroup = this.checkoutFormGroup.get(formGroupName);
