@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-//enables the cache management capability
+// enables the cache management capability
 @EnableCaching
 public class App  {
 

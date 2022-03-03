@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import net.sf.ehcache.config.CacheConfiguration;
 
 @Configuration
-//enable caching
+// enable caching
 @EnableCaching
 public class CachingConfiguration extends CachingConfigurerSupport {
 
