@@ -39,7 +39,7 @@ CREATE TABLE `states` (
   `country_id` smallint unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_country` (`country_id`),
-  CONSTRAINT `fk_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
+  CONSTRAINT `fk_country` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 -- -----------------------------------------------------

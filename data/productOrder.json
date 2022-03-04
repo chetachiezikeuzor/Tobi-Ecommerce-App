@@ -1,0 +1,39 @@
+{
+   "customer":{
+      "firstName":"Chetachi",
+      "lastName":"Ezikeuzor",
+      "email":"cheetahezi@email.com"
+   },
+   "shippingAddress":{
+      "street":"12345 River Place Dr.",
+      "city":"Frisco",
+      "state":"Texas",
+      "country":"United States",
+      "zipCode":"12345"
+   },
+   "billingAddress":{
+      "street":"12345 River Place Dr.",
+      "city":"Frisco",
+      "state":"Texas",
+      "country":"United States",
+      "zipCode":"12345"
+   },
+   "order":{
+      "totalPrice":36.98,
+      "totalQuantity":2
+   },
+   "orderItems":[
+      {
+         "imageUrl":"assets/images/products/large_and_extra_large/bamboo-palm_base.jpg",
+         "quantity":2,
+         "unitPrice":199.99,
+         "productId":1
+      },
+      {
+         "imageUrl":"assets/images/products/large_and_extra_large/green-jewel_xl_base.jpg",
+         "quantity":1,
+         "unitPrice":199.99,
+         "productId":10
+      }
+   ]
+}

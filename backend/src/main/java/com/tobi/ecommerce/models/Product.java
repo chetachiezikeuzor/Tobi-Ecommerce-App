@@ -14,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="products")
+@Cacheable
 public class Product {
 
     @Id

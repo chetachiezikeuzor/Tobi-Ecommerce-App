@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   tobiApiUrl: 'https://localhost:9898/api',
+  stripePublishableKey:
+    'pk_test_51H4IXzIcCHriQoIn1JSV38ceQTWiq2CrFyTZnqLHSPeuHReLvCeqCXvGg4lf7OrEqaSr0hBrVtYwxpV4BeiwsyxV00tYD23I3j',
 };
 
 /*
