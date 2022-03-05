@@ -10,6 +10,7 @@
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build — prod"
   },
+  "engines": { "node": "v16.13.0", "npm": "8.1.0" },
   "private": true,
   "dependencies": {
     "@angular/cli": "~13.1.4",
