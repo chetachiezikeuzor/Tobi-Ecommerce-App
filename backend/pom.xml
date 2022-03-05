@@ -68,27 +68,15 @@
 			<groupId>javax.cache</groupId>
 			<artifactId>cache-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.heroku</groupId>
+			<artifactId>webapp-runner</artifactId>
+			<version>9.0.31.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-			<!-- Make this jar executable -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<!-- DO NOT include log4j.properties file in your Jar -->
-					<excludes>
-						<exclude>**/log4j.properties</exclude>
-					</excludes>
-					<archive>
-						<manifest>
-							<!-- Jar file entry point -->
-							<mainClass>com.project.app</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -123,20 +111,26 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>2.0.3</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<appName>tobi-ecommerce-app</appName>
-					<includeTarget>false</includeTarget>
-					<includes>
-						<include>${project.build.directory}/${project.build.finalName}.jar</include>
-					</includes>
-					<jdkVersion>${java.version}</jdkVersion>
-					<processTypes>
-						<web>java $JAVA_OPTS -jar ${project.build.directory}/${project.build.finalName}.jar</web>
-					</processTypes>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
+					<warName>${project.artifactId}</warName>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals><goal>copy-dependencies</goal></goals>
+						<configuration>
+							<includeArtifactIds>webapp-runner</includeArtifactIds>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
