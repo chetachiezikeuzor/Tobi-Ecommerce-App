@@ -14,6 +14,8 @@ import { ProductService } from './services/product.service';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MembersPageComponent } from './pages/members-page/members-page.component';
 import { OrderHistoryPageComponent } from './pages/order-history-page/order-history-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,13 @@ import { OrderHistoryPageComponent } from './pages/order-history-page/order-hist
     MembersPageComponent,
     OrderHistoryPageComponent,
   ],
-  imports: [SharedModule, BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [SharedModule, BrowserModule, AppRoutingModule, HttpClientModule, 
+    ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: environment.production,
+  // Register the ServiceWorker as soon as the app is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+})],
   providers: [ProductService],
   bootstrap: [AppComponent],
 })
