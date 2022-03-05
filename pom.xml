@@ -68,6 +68,11 @@
 			<groupId>javax.cache</groupId>
 			<artifactId>cache-api</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.heroku</groupId>
+			<artifactId>webapp-runner-main</artifactId>
+			<version>9.0.52.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
