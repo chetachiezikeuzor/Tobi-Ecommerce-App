@@ -319,7 +319,7 @@ export class CheckoutSectionComponent implements OnInit {
       JSON.stringify(purchase.shippingAddress!.state)
     );
     const shippingCountry: Country = JSON.parse(
-      JSON.stringify(purchase.shippingAddress!.state)
+      JSON.stringify(purchase.shippingAddress!.country)
     );
     purchase.shippingAddress!.state = shippingState.name;
     purchase.shippingAddress!.country = shippingCountry.name;
@@ -332,7 +332,7 @@ export class CheckoutSectionComponent implements OnInit {
       JSON.stringify(purchase.billingAddress!.state)
     );
     const billingCountry: Country = JSON.parse(
-      JSON.stringify(purchase.billingAddress!.state)
+      JSON.stringify(purchase.billingAddress!.country)
     );
     purchase.billingAddress!.state = billingState.name;
     purchase.billingAddress!.country = billingCountry.name;
