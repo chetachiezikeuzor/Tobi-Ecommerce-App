@@ -1,3 +1,10 @@
 .history
 *.DS_Store
 .DS_Store
+.idea
+
+frontend/target
+frontend/dist
+frontend/node
+frontend/frontend.iml
+backend/src/main/resources/static
