@@ -153,6 +153,23 @@
 							</artifactItems>
 						</configuration>
 					</execution>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.tobi</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>0.0.1-SNAPSHOT</version>
+									<type>jar</type>
+									<destFileName>webapp-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 		</plugins>
