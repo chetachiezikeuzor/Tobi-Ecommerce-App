@@ -9,4 +9,4 @@ frontend/target
 frontend/dist
 frontend/node
 frontend/frontend.iml
-backend/src/main/resources/static
+#backend/src/main/resources/static
