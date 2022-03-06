@@ -3,6 +3,8 @@
 .DS_Store
 .idea
 
+*/target
+
 frontend/target
 frontend/dist
 frontend/node
